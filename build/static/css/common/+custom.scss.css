@@ -1,0 +1,15 @@
+#contentHeader {
+  width: 100%;
+  height: 50vw;
+  background: url("../images/heroImage-3000.jpg") no-repeat center bottom;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.contentWell {
+  max-width: none;
+  width: 100%;
+  padding: 0 5%;
+  background-color: white;
+  margin-top: 50vw; }
