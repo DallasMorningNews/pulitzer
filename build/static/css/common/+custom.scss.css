@@ -11,5 +11,20 @@
   max-width: none;
   width: 100%;
   padding: 0 5%;
-  background-color: white;
-  margin-top: 50vw; }
+  background-color: white; }
+
+header {
+  background-color: #0f1925;
+  margin-top: 50vw;
+  color: white;
+  font-family: Tinos, Georgia, serif;
+  padding: 100px 5%;
+  position: relative;
+  z-index: 100;
+  text-align: center; }
+  header img {
+    width: 150px;
+    position: absolute;
+    top: -73px;
+    left: 50%;
+    margin-left: -75px; }
