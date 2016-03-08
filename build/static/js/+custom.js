@@ -1,10 +1,10 @@
 $(document).ready(function() {
-	
+
 	//custom scripting goes here
 
 	// injecting current year into footer
 	// DO NOT DELETE
-	
+
 	var d = new Date();
 	var year = d.getFullYear();
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
 	// checks which image we're on in the slideshow
 	// if it's the first, hide the previous button
 	// if it's the last, hide the next button
-	// else show the previous and last buttons 
+	// else show the previous and last buttons
 
 	function slidePosition() {
 		if (slideCounter === 0) {
@@ -76,7 +76,7 @@ $(document).ready(function() {
 
 	// rewind the slideshow by moving the current slide to the left
 	// then move the previous slide back into view from the left
-	// then check where we are in the slideshow 
+	// then check where we are in the slideshow
 
 	function rewindSlide() {
 		slideCounter --;
@@ -94,7 +94,7 @@ $(document).ready(function() {
 		}
 	}
 
-	// append a number and total length of slideshow to each cutline 
+	// append a number and total length of slideshow to each cutline
 
 	$slideCutline.each(function(k,v) {
 		var cutlinePrefix = "<strong> Slideshow — " + (k + 1) + " of " + totalSlides + ":</strong> ";
@@ -132,13 +132,13 @@ $(document).ready(function() {
 	------------------------------------------------------------------------------------------
 	*/
 
-	/* DELETE THIS ENTIRE LINE	
+	/* DELETE THIS ENTIRE LINE
 
 	var $dropHead = $('.dropList .dropHed'),
 		$dropTweet = $('.dropList .fa-twitter');
 
 	$dropHead.on('click', function(){
-		$(this).next(".dropText").slideToggle(200); 
+		$(this).next(".dropText").slideToggle(200);
 		$(this).find(".fa").toggleClass('fa-plus').toggleClass('fa-minus');
 	});
 
@@ -161,13 +161,13 @@ $(document).ready(function() {
 	------------------------------------------------------------------------------------------
 	*/
 
-	/* DELETE THIS ENTIRE LINE	
+	/* DELETE THIS ENTIRE LINE
 
 	$(".synopsis p").on("click", function() {
 		var shareURL = "&url=" + encodeURIComponent(window.location.href),
 			shareText = $(this).text(),
 			twitterTag = "dallasnews";
-			
+
 		var maxLength = 97 // maximum number of characters to extract
 
 		var trimmedText = shareText.substr(0, maxLength);
@@ -178,8 +178,8 @@ $(document).ready(function() {
 
 		trimmedText += " ... "
 
-		trimmedText = encodeURIComponent(trimmedText); 
-		
+		trimmedText = encodeURIComponent(trimmedText);
+
 		var shareLink = "http://twitter.com/intent/tweet?text=" + trimmedText + shareURL + "&via=" + twitterTag;
 		window.open(shareLink, "_blank");
 	})
@@ -195,7 +195,7 @@ $(document).ready(function() {
 	------------------------------------------------------------------------------------------
 	*/
 
-	/* DELETE THIS ENTIRE LINE	  
+	/* DELETE THIS ENTIRE LINE
 
 	//caching a pointer to the jquery element
 
@@ -223,4 +223,3 @@ $(document).ready(function() {
 
 
 });
-
