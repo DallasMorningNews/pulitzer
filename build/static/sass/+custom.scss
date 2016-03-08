@@ -15,6 +15,32 @@ $pulitzerGold: #bfa959;
 
 $custom: "Playfair Display", Georgia, serif;
 
+
+@mixin rightIndicator {
+  border-right: 1px solid $black121;
+  border-top: 1px solid $black121;
+  border-left: none;
+  border-bottom: none;
+  left: auto;
+  bottom: auto;
+  right: -11px;
+  top: 50%;
+  margin-top: -5px;
+}
+
+@mixin bottomIndicator() {
+  border-top: none;
+  border-left: none;
+  border-bottom: 1px solid $black121;
+  border-right: 1px solid $black121;
+  right: auto;
+  top: auto;
+  left: 50%;
+  margin-left: -5px;
+  bottom: -13px;
+  margin-top: 0;
+}
+
 /////////////////////////////////////////
 /// GLOBAL STYLES ///////////////////////
 /////////////////////////////////////////
@@ -48,6 +74,10 @@ a {
   background-color: white;
 }
 
+.hidden {
+  display: none;
+}
+
 
 
 /////////////////////////////////////////
@@ -62,7 +92,8 @@ header {
   padding: 100px 10%;
   position: relative;
   z-index: 100;
-  text-align :center;
+  text-align: center;
+  @include transition(all, .5s);
   h1 {
     margin: 40px 0;
     font-size: 5rem;
@@ -97,6 +128,13 @@ header {
     top: -73px;
     left: 50%;
     margin-left: -75px;
+    @include transition(all, .5s);
+  }
+  &.initialPos {
+    padding-top: 200px;
+    img {
+      top: 23px;
+    }
   }
 }
 
@@ -177,18 +215,41 @@ header {
 
 .leftWell {
   float: left;
-  width: 300px;
+  width: 350px;
+  border-right: 1px solid $pulitzerBlack;
+  padding-right: 50px;
+
 }
 
 .rightWell {
   float: right;
-  width: calc(100% - 325px);
-  padding-left: 25px;
-  border-left: 1px solid $pulitzerBlack;
+  width: calc(100% - 350px);
+  padding-left: 50px;
 }
 
 .skedBlock {
   margin: 0 0 2.4rem;
+}
+
+@media(max-width: 950px) {
+  .leftWell {
+    width: 300px;
+  }
+  .rightWell {
+    width: calc(100% - 300px);
+  }
+}
+
+@media (max-width: 800px) {
+  .leftWell, .rightWell {
+    width: 100%;
+    float: none;
+    padding: 0 0;
+  }
+  .leftWell {
+    border-right: none;
+    margin-bottom: 4.8rem;
+  }
 }
 
 
@@ -200,11 +261,11 @@ header {
 .dropList .dropHed {
   cursor: pointer;
   color: $pulitzerBlack;
-  padding-left: 33px;
-  text-indent: -16px;
+  padding-left: 28px;
+  text-indent: -14px;
 }
 .dropList .dropItem {
-  margin-bottom: 2.4rem;
+  margin-bottom: 3.6rem;
 }
 .dropList .dropHed .fa{
   font-size: 2rem;
@@ -222,13 +283,138 @@ header {
   display: block;
 }
 .dropList .dropText {
-  padding-bottom: 2.4rem;
+  padding-bottom: 4.8rem;
 }
 .expandedText {
   border-bottom: 1px solid $black235;
 }
 
-/* DMN PULITZERS */
+
+
+/////////////////////////////////////////
+/// SPEAKER BLOCKS //////////////////////
+/////////////////////////////////////////
+
+.dropList h6 {
+  margin: 2.4rem 0 2.4rem;
+  text-transform: uppercase;
+}
+
+.speakerList {
+  margin-bottom: 2.4rem;
+  float: left;
+  width: 65px;
+  border-right: 1px solid $black121;
+  li {
+    list-style-type: none;
+    margin-right: 5px;
+    position: relative;
+    &.activeMug:after {
+      @include rotate(45deg);
+      @include psuedoElement(10px, 10px, absolute);
+      background-color: white;
+      @include rightIndicator;
+    }
+    img {
+      width: 50px;
+      border-radius: 50%;
+      @include transition(all, .5s);
+      cursor: pointer;
+      position: relative;
+    }
+  }
+}
+
+
+
+.speakerBlock {
+  float: right;
+  width: calc(100% - 95px);
+  img {
+    width: 125px;
+    border-radius: 50%;
+    float: left;
+    margin: 0 15px 15px 0;
+  }
+  h6 {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 950px) {
+  .speakerList {
+    width: auto;
+    display: inline-block;
+    border-right: none;
+    border-bottom: 1px solid $black121;
+    float: none;
+    li {
+      display: inline-block;
+      &.activeMug:after {
+        @include bottomIndicator;
+      }
+    }
+  }
+  .speakerBlock {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .speakerList {
+    margin-bottom: 2.4rem;
+    float: left;
+    width: 65px;
+    border-right: 1px solid $black121;
+    border-bottom: none;
+    li {
+      list-style-type: none;
+      &.activeMug:after {
+        @include rightIndicator();
+        right: -20px;
+      }
+    }
+  }
+
+  .speakerBlock {
+    float: right;
+    width: calc(100% - 95px);
+    img {
+      width: 125px;
+      border-radius: 50%;
+      float: left;
+      margin: 0 15px 15px 0;
+    }
+    h6 {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .speakerList {
+    float: none;
+    width: auto;
+    display: inline-block;
+    border-bottom: 1px solid $black121;
+    border-right: none;
+    li {
+      &.activeMug:after {
+        @include bottomIndicator();
+      }
+    }
+  }
+
+  .speakerBlock {
+    float: none;
+    width: 100%;
+  }
+}
+
+/////////////////////////////////////////
+/// DMN PULITZERS ///////////////////////
+/////////////////////////////////////////
 
 .dmnPulitzers {
 	outline: 1px solid grey;
