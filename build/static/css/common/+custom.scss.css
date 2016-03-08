@@ -176,3 +176,24 @@ header {
 
 .expandedText {
   border-bottom: 1px solid #ebebeb; }
+
+/* DMN PULITZERS */
+.dmnPulitzers {
+  outline: 1px solid grey;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto; }
+
+.dmnSlideshow {
+  outline: 1px solid palevioletred;
+  padding: 20px; }
+
+.dmnAwards {
+  outline: 1px solid blueviolet; }
+
+.dmnAwards h4 {
+  font-size: 1.8rem;
+  line-height: 2.2rem; }
+
+.dmnAwards a {
+  color: darkgray; }
