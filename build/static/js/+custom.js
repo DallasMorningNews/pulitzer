@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+	console.log("loaded");
 	//custom scripting goes here
 
 	// injecting current year into footer
@@ -8,7 +8,7 @@ $(document).ready(function() {
 	var d = new Date();
 	var year = d.getFullYear();
 
-	$('.copyright').text(year);
+	$('.copyright').text(year); 
 
 	/*
 	------------------------------------------------------------------------------------------
@@ -132,12 +132,15 @@ $(document).ready(function() {
 	------------------------------------------------------------------------------------------
 	*/
 
-	/* DELETE THIS ENTIRE LINE
 
-	var $dropHead = $('.dropList .dropHed'),
-		$dropTweet = $('.dropList .fa-twitter');
+	$(".dropHed").click(function() {
+		console.log("test");
+	});
 
-	$dropHead.on('click', function(){
+
+
+	$("h4").on('click', function(){
+		console.log('click');
 		$(this).next(".dropText").slideToggle(200);
 		$(this).find(".fa").toggleClass('fa-plus').toggleClass('fa-minus');
 	});
@@ -150,7 +153,7 @@ $(document).ready(function() {
 		window.open(shareLink, '_blank');
 	});
 
-	DELETE THIS ENTIRE LINE */
+
 
 
 

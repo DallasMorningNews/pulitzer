@@ -39,7 +39,7 @@ if (jQuery(window).width() < 768) {
     /*
     var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom");
     adSlot2.setTargeting("position", "x03");
-    adSlot2.addService(googletag.pubads()); 
+    adSlot2.addService(googletag.pubads());
     */
 } else {
     var DFP_sitepage = "DMN/interactives";
@@ -83,17 +83,106 @@ googletag.enableServices();
 
 <section class="contentWell clearFix">
 
-	<!-- 
-		<div class="shareComments shareCommentsTop">	
+
+  <div id="schedule" class="clearFix pulModule">
+
+      <h3>Schedule</h3>
+
+      <div class="leftWell">
+
+        <div class="skedBlock">
+          <iframe class="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.16103427176!2d-96.78030424883963!3d32.840987687933676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e9f0e5504224d%3A0x3e90facb0944b1e9!2sGeorge+W.+Bush+Presidential+Library+and+Museum!5e0!3m2!1sen!2sus!4v1457449273418" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <p>George W. Bush Presidental Center<br  />2943 SMU Boulevard<br />Dallas, Texas, 75203</p>
+        </div>
+        <!-- end skedBlock -->
+
+        <div class="skedBlock">
+          <h5>Thursday, June 2</h5>
+          <ul>
+            <li>George W. Bush Presidential Center open house</li>
+            <li>Excerpts from three Pulitzer-winning plays about the presidency</li>
+            <li>Panel: "Presidential Biographies: The Challenges Then and Now."</li>
+          </ul>
+        </div>
+        <!-- end skedBlock -->
+
+        <div class="skedBlock">
+          <h5>Friday, June 3</h5>
+          <ul>
+            <li>Panel: "The Presidency: Coverage in the Digital Age."</li>
+            <li>Panel: "Presidents and Poverty: The Fight that Never Ends"</li>
+            <li>Panel: "The Right to Know vs. the Responsibility to Protect: How to Tell the Difference"</li>
+            <li>Panel: "The Politics of Polarization: Can Democracy Survive" I'm going to spell this word wrong.</li>
+          </ul>
+        </div>
+        <!-- end skedBlock -->
+
+      </div>
+      <!-- end leftWell -->
+
+      <div class="rightWell">
+        <div class="dropList" id="fiveThings">
+
+          <div class="dropItem">
+              <h4 class="dropHed"><i class="fa fa-minus-circle"></i> Presidential Biographies: The Challenges Then and Now</h4>
+              <div class="dropText expandedText">
+                <p>The explorations of journalists and historians of a president's leadership and abilities to communicate with the American people have often provided the undergirding for the functioning of our democracy. This panel discusses the significance of what we've learned from some of the best, all of whom have won Pulitzers.</p>
+              </div>
+          </div>
+          <!-- end dropItem -->
+
+          <div class="dropItem">
+              <h4 class="dropHed"><i class="fa fa-plus-circle"></i> The Presidency: Coverage in the Digital Age.</h4>
+              <div class="dropText">
+                <p>In the digital age, when anyone can tweet a breaking news headline or blog a public-affairs anyalysis, news organizations are changing how they cover news. Similarly, political leaders make use of digital tools, including social media, to bypass traditional media "gatekeepers" and communicate directly with targeted, usually like-minded, people. This panel looks at the impact of this digital phenomenon on coverage, presidential action and public opinion.</p>
+              </div>
+          </div>
+          <!-- end dropItem -->
+
+          <div class="dropItem">
+              <h4 class="dropHed"><i class="fa fa-plus-circle"></i> Presidents and Poverty: The Fight that Never Ends</h4>
+              <div class="dropText">
+                <p>A succession of presidents have made fighting poverty and helping impoverished Americans confront and overcome poverty a top issue of their administration. This panel features former administration officials and prize-winning journalists who have wrestled with these issues. We focus the discussion on domestic poverty and its implications, the growing income disparity in the U.S., poverty's impact on real people and how it shapes communities.</p>
+              </div>
+          </div>
+          <!-- end dropItem -->
+
+          <div class="dropItem">
+              <h4 class="dropHed"><i class="fa fa-plus-circle"></i> The Right to Know vs. the Responsibility to Protect: How to Tell the Difference</h4>
+              <div class="dropText">
+                <p><em>The Guardian</em>and <em>Washington Post</em> shared the 2014 Pulitzer Prize for Public Service for their exposure of the surveillance activities of the NSA following the leaks of Edward Snowden. Where does the people’s right to know rub up against government’s responsibility to protect? How do administration officials and journalists navigate these competing interests? It’s a natural tension that transcends party, administration, news organizations. What criteria do administration officials use to determine what to keep classified? Is transparency a double-edged sword? What sorts of guidelines should news organizations employ in discerning what’s newsworthy?  </p>
+              </div>
+          </div>
+          <!-- end dropItem -->
+
+          <div class="dropItem">
+              <h4 class="dropHed"><i class="fa fa-plus-circle"></i> The Politics of Polarization: Can Democracy Survive?</h4>
+              <div class="dropText">
+                <p>Are American politics today more polarized than ever before? Why is that? Or if not, why does it seem so? Is this good or bad? Is our democracy eroding in the face of demographic fracturing, increased class warfare and exacerbating fear and distrust? What can/should our leaders do about it? What can we do about it?</p>
+              </div>
+          </div>
+          <!-- end dropItem -->
+
+        </div>
+        <!-- end dropList -->
+
+      </div>
+      <!-- end rightWell -->
+
+  </div>
+  <!-- end schedule -->
+
+	<!--
+		<div class="shareComments shareCommentsTop">
 		<ul id="share-bar1" class="width-auto-hack"></ul>
-	</div>        		
+	</div>
 	-->
 	<!-- end shareComments -->
 
 
 	<!-- end more -->
 
-		<div class="shareComments">   		
+		<div class="shareComments">
 		<ul id="share-bar2" class="width-auto-hack"></ul>
         <div id="comments"></div>
     </div>
