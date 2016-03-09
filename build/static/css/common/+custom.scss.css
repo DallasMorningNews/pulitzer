@@ -74,6 +74,8 @@ header {
     font-size: 1.4rem;
     line-height: 1.8rem;
     margin-bottom: 2.4rem; }
+  header a {
+    color: white; }
   header img {
     width: 150px;
     position: absolute;

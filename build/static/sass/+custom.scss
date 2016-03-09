@@ -122,6 +122,9 @@ header {
     font-family: $sans;
     @include type(1.4rem, 1.8rem, 2.4rem);
   }
+  a {
+    color: white;
+  }
   img {
     width: 150px;
     position: absolute;
