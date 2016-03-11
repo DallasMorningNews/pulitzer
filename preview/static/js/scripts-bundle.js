@@ -23,7 +23,7 @@ $(document).ready(function() {
 	$(".speakerList li").click(function() {
 		var targetBio = $(this).children("img").attr("alt");
 
-		$(".speakerList li").removeClass("activeMug");
+		$(this).siblings('li').removeClass("activeMug");
 		$(this).addClass("activeMug");
 
 		updateBio(targetBio);
