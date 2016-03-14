@@ -8,7 +8,65 @@ $(document).ready(function() {
 	var d = new Date();
 	var year = d.getFullYear();
 
-	$('.copyright').text(year); 
+	$('.copyright').text(year);
+
+
+	function updateBio(bioName) {
+		$.each($(".expandedText").children(".speakerBlock"), function(k, v) {
+			if ( $(this).attr("data-name") === bioName ) {
+				$(".expandedText").children(".speakerBlock").addClass("hidden");
+				$(this).removeClass("hidden");
+			}
+		});
+	}
+
+	$(".speakerList li").click(function() {
+		var targetBio = $(this).children("img").attr("alt");
+
+		$(this).siblings('li').removeClass("activeMug");
+		$(this).addClass("activeMug");
+
+		updateBio(targetBio);
+	});
+
+
+	// function rotateBios() {
+	// 	var activeList = $(".expandedText").children(".speakerList");
+	// 	var listLength = activeList.children('li').length;
+	// 	var activeBio = activeList.children('.speakerList li').children('img').attr('data-name');
+	// 	var i = 0;
+	//
+	// 	function updateMugs() {
+	// 		if (i < listLength -1) {
+	// 			activeList.children('.speakerList li').children('img').eq(i).removeClass("activeMug");
+	// 			i++;
+	// 			activeList.children('.speakerList li ').children('img').eq(i).addClass("activeMug");
+	// 		} else if (i >= listLength -1) {
+	// 			activeList.children('.speakerList li').children('img').eq(i).removeClass("activeMug");
+	// 			i = 0;
+	// 			activeList.children('.speakerList li ').children('img').eq(i).addClass("activeMug");
+	// 		}
+	//
+	// 		activeBio = activeList.children('.speakerList li').children('.activeMug').attr('data-name');
+	// 		updateBio(activeBio);
+	// 	}
+	//
+	//
+	//
+	// 	function rotateMugs() {
+	// 		setTimeout(function() {
+	// 			updateMugs();
+	// 			rotateMugs();
+	// 		}, 5000);
+	// 	}
+	//
+	// 	rotateMugs();
+	// }
+
+	//rotateBios();
+
+
+
 
 	/*
 	------------------------------------------------------------------------------------------
@@ -133,25 +191,51 @@ $(document).ready(function() {
 	*/
 
 
-	$(".dropHed").click(function() {
-		console.log("test");
+
+	$(".dropHed").on('click', function(){
+
+		// function that marks the new dropText block as expanded
+		function markExpanded(thisObj) {
+			thisObj.next(".dropText").addClass("expandedText");
+		}
+
+		// if we're clicking on a block that's not currently expanded ...
+		if ( $(this).next(".dropText").hasClass("expandedText") === false ) {
+
+			// close the currently expanded block
+			$('.expandedText').slideToggle(200);
+
+			// toggle the previously expanded plus/minus icon
+			$(".expandedText").siblings('h4').children('.fa').toggleClass('fa-plus-circle').toggleClass("fa-minus-circle");
+
+			// expand the block clicked on
+			$(this).next(".dropText").slideToggle(200);
+
+			// toggle the new expanded block's plus/minus icon
+			$(this).find(".fa").toggleClass('fa-plus-circle').toggleClass('fa-minus-circle');
+
+			// set a variable to the clicked on object
+			var target = $(this);
+
+			// run a function after everything slidetoggles at 201 milliseconds
+			setTimeout(function() {
+				// remove the expandedText class from the old expandedText block
+				$('.expandedText').removeClass("expandedText");
+				// run the function to add expandedText class to the target object's dropText sibling (see above markExpanded function)
+				markExpanded(target);
+			}, 201);
+		} else { // if we're clicking on a block that's already expanded, just close it down, toggle the icons, and remove the expandedText class
+			$('.expandedText').slideToggle(200);
+			$(".expandedText").siblings('h4').children('.fa').toggleClass('fa-plus-circle').toggleClass("fa-minus-circle");
+			setTimeout(function() {
+					$('.expandedText').removeClass("expandedText");
+			}, 201);
+		}
 	});
 
 
 
-	$("h4").on('click', function(){
-		console.log('click');
-		$(this).next(".dropText").slideToggle(200);
-		$(this).find(".fa").toggleClass('fa-plus').toggleClass('fa-minus');
-	});
 
-	$dropTweet.on("click", function(){
-		var shareID = $(this).closest(".dropList").attr("id"),
-			shareURL = "&url="+encodeURIComponent(window.location.href + "#" + shareID),
-			shareText = encodeURIComponent($(this).closest(".dropList").find("h4").text()),
-			shareLink = "https://twitter.com/intent/tweet?text="+ shareText + shareURL + "&via=dallasnews";
-		window.open(shareLink, '_blank');
-	});
 
 
 
@@ -225,4 +309,10 @@ $(document).ready(function() {
 	DELETE THIS ENTIRE LINE */
 
 
+});
+
+$(window).load(function() {
+	setTimeout(function() {
+		$("header").removeClass("initialPos");
+	}, 500);
 });
