@@ -64,6 +64,18 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+  @media (max-width: 1800px) {
+    background: url("../images/heroImage-2400.jpg") no-repeat center bottom;
+    background-size: cover;
+  }
+  @media (max-width: 1200px) {
+    background: url("../images/heroImage-1800.jpg") no-repeat center bottom;
+    background-size: cover;
+  }
+  @media (max-width: 600px) {
+    background: url("../images/heroImage-1200.jpg") no-repeat center bottom;
+    background-size: cover;
+  }
 }
 
 .contentWell {
@@ -181,7 +193,9 @@ header {
 .pulModule {
   width: 100%;
   max-width: 1000px;
-  margin: 4.8rem auto 0;
+  margin: 9.6rem auto 0;
+  padding-bottom: 9.6rem;
+  border-bottom: 1px solid $black235;
   font-family: $sans;
   position: relative;
   iframe {
@@ -214,8 +228,8 @@ header {
 .leftWell {
   float: left;
   width: 350px;
-  border-right: 1px solid $pulitzerBlack;
   padding-right: 50px;
+  border-right: 1px solid $black121;
 
 }
 
@@ -239,17 +253,84 @@ header {
 }
 
 @media (max-width: 800px) {
+  .pulModule {
+    margin-bottom: 6rem;
+    padding-bottom: 6rem;
+    h3 {
+      @include type(2.4rem, 3rem, 2.4rem);
+    }
+    h5 {
+      @include type(1.8rem, 2.4rem, .3rem);
+    }
+  }
   .leftWell, .rightWell {
     width: 100%;
     float: none;
     padding: 0 0;
   }
   .leftWell {
-    border-right: none;
     margin-bottom: 4.8rem;
+    border-right: 1px solid $black121;
   }
 }
 
+#video {
+  p {
+    text-align: center;
+  }
+  a {
+    color: $dmnblue;
+    &:visited {
+      color: $dmnblue;
+    }
+  }
+}
+
+/////////////////////////////////////////
+/// FULL MODULES ////////////////////////
+/////////////////////////////////////////
+
+.fullBreak {
+  background-color: $pulitzerBlack;
+  padding: 6rem 0;
+  position: relative;
+  z-index: 1000px;
+  color: white;
+  text-align: center;
+  h5 {
+    line-height: 3rem;
+    font-family: $sans;
+    margin-bottom: 2.4rem;
+  }
+  a {
+    width: 150px;
+    @include type(1.8rem, 4rem, 0);
+    border: 0;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: $sans;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    color: $black33;
+    @include transition(all, .15s);
+    &:focus{
+      outline: none;
+    }
+    &:hover {
+      background-color: $pulitzerGold;
+      color: white;
+    }
+  }
+}
+
+.fullContent {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
 
 /////////////////////////////////////////

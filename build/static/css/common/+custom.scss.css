@@ -15,6 +15,18 @@ a {
   position: fixed;
   top: 0;
   left: 0; }
+  @media (max-width: 1800px) {
+    #contentHeader {
+      background: url("../images/heroImage-2400.jpg") no-repeat center bottom;
+      background-size: cover; } }
+  @media (max-width: 1200px) {
+    #contentHeader {
+      background: url("../images/heroImage-1800.jpg") no-repeat center bottom;
+      background-size: cover; } }
+  @media (max-width: 600px) {
+    #contentHeader {
+      background: url("../images/heroImage-1200.jpg") no-repeat center bottom;
+      background-size: cover; } }
 
 .contentWell {
   max-width: none;
@@ -122,7 +134,9 @@ header {
 .pulModule {
   width: 100%;
   max-width: 1000px;
-  margin: 4.8rem auto 0;
+  margin: 9.6rem auto 0;
+  padding-bottom: 9.6rem;
+  border-bottom: 1px solid #ebebeb;
   font-family: "Lato", Arial, sans-serif;
   position: relative; }
   .pulModule iframe {
@@ -151,8 +165,8 @@ header {
 .leftWell {
   float: left;
   width: 350px;
-  border-right: 1px solid #0f1925;
-  padding-right: 50px; }
+  padding-right: 50px;
+  border-right: 1px solid #797979; }
 
 .rightWell {
   float: right;
@@ -169,13 +183,73 @@ header {
     width: calc(100% - 300px); } }
 
 @media (max-width: 800px) {
+  .pulModule {
+    margin-bottom: 6rem;
+    padding-bottom: 6rem; }
+    .pulModule h3 {
+      font-size: 2.4rem;
+      line-height: 3rem;
+      margin-bottom: 2.4rem; }
+    .pulModule h5 {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      margin-bottom: 0.3rem; }
   .leftWell, .rightWell {
     width: 100%;
     float: none;
     padding: 0 0; }
   .leftWell {
-    border-right: none;
-    margin-bottom: 4.8rem; } }
+    margin-bottom: 4.8rem;
+    border-right: 1px solid #797979; } }
+
+#video p {
+  text-align: center; }
+
+#video a {
+  color: #0185d3; }
+  #video a:visited {
+    color: #0185d3; }
+
+.fullBreak {
+  background-color: #0f1925;
+  padding: 6rem 0;
+  position: relative;
+  z-index: 1000px;
+  color: white;
+  text-align: center; }
+  .fullBreak h5 {
+    line-height: 3rem;
+    font-family: "Lato", Arial, sans-serif;
+    margin-bottom: 2.4rem; }
+  .fullBreak a {
+    width: 150px;
+    font-size: 1.8rem;
+    line-height: 4rem;
+    margin-bottom: 0;
+    border: 0;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Lato", Arial, sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    color: #212121;
+    -webkit-transtion: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+    -o-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out; }
+    .fullBreak a:focus {
+      outline: none; }
+    .fullBreak a:hover {
+      background-color: #bfa959;
+      color: white; }
+
+.fullContent {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto; }
 
 .dropList .dropHed {
   cursor: pointer;
