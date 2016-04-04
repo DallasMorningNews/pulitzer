@@ -943,7 +943,8 @@ header {
   width: 100%;
   max-width: 1000px;
   margin: 4.8rem auto 0;
-  font-family: "Lato", Arial, sans-serif; }
+  font-family: "Lato", Arial, sans-serif;
+  position: relative; }
   .pulModule iframe {
     margin-bottom: 1.2rem; }
   .pulModule h3 {
@@ -1156,12 +1157,22 @@ header {
     float: none;
     width: 100%; } }
 
-.dmnSlideshow {
-  outline: 1px solid palevioletred;
-  height: 400px; }
+#dmnPulitzers {
+  margin-bottom: 20px; }
 
-.dmnAwards h6 {
-  margin-bottom: 15px; }
+#dmnSlideshow {
+  position: relative; }
+
+.dmnSlide {
+  position: absolute;
+  top: 40px;
+  left: 0px; }
+
+.dmnSlide img {
+  width: 100%; }
+
+.leftWell .dmnAwards h6 {
+  margin-top: 25px; }
 
 .dmnAwards a {
   color: darkgray; }

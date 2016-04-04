@@ -1,509 +1,489 @@
-{%extends 'base.html'%}
-{%import 'partials/img.html' as img%}
-
-
-{%block custom_meta%}
+{%extends 'base.html'%} {%import 'partials/img.html' as img%} {%block custom_meta%}
 <meta content="{{keywords|join(',')}}" name="keywords" />
-
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta content="{{description}}" name="description" />
 <title>{{title}}</title>
 <meta property="og:url" content="{{url}}" />
-<meta property="og:title" content="{{title}}"/>
-<meta property="og:description" content="{{description}}" name="description"/>
-<meta property="og:image" content="{{imgURL}}"/>
-<meta property="og:image:height" content="{{imgHeight}}"/>
-<meta property="og:image:width" content="{{imgWidth}}"/>
+<meta property="og:title" content="{{title}}" />
+<meta property="og:description" content="{{description}}" name="description" />
+<meta property="og:image" content="{{imgURL}}" />
+<meta property="og:image:height" content="{{imgHeight}}" />
+<meta property="og:image:width" content="{{imgWidth}}" />
 <meta property="og:type" content="article" />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="{{twitter}}" />
 <meta name="twitter:creator" content="{{authorTwitter}}" />
-
 <meta name="liveFyreID" content="{{id}}" />
-
-<meta name='parsely-page' id='parsely-page' content='{"title": "{{title}}", "link": "{{url}}", "image_url": "{{imgURL}}", "type": "post", "post_id": "{{id}}", "pub_date": "{{publishDate}}", "section": "{{section}}", "author": ["{{authors}}"], "tags": ["{{keywords|join('","')|safe}}"]}'/>
-
-<meta property="og:keywords" content="{{keywords|join(',')}}"/>
-
-<meta name='news_keywords' content="{{keywords|join(',')}}"/>
-{%endblock%}
-
-
-{%block custom_head%}
-{%endblock%}
-
-
-
-
-{%block ad%}
+<meta name='parsely-page' id='parsely-page' content='{"title": "{{title}}", "link": "{{url}}", "image_url": "{{imgURL}}", "type": "post", "post_id": "{{id}}", "pub_date": "{{publishDate}}", "section": "{{section}}", "author": ["{{authors}}"], "tags": ["{{keywords|join(' "," ')|safe}}"]}'/>
+<meta property="og:keywords" content="{{keywords|join(',')}}" />
+<meta name='news_keywords' content="{{keywords|join(',')}}" /> {%endblock%} {%block custom_head%} {%endblock%} {%block ad%}
 <script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
 <script type="text/javascript">
 DFP_networkId = "11222444";
 var DFPSlotSizes = [];
-if (jQuery(window).width() < 768)
-{
-var DFP_sitepage = "m.DMN/interactives";
-DFPSlotSizes = [320,50]
-var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop");
-adSlot0.setTargeting("position", "x01");
-adSlot0.addService(googletag.pubads());
+if (jQuery(window).width() < 768) {
+    var DFP_sitepage = "m.DMN/interactives";
+    DFPSlotSizes = [320, 50]
+    var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop");
+    adSlot0.setTargeting("position", "x01");
+    adSlot0.addService(googletag.pubads());
 
-/*
-var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle");
-adSlot1.setTargeting("position", "x02");
-adSlot1.addService(googletag.pubads());
-*/
+    /*
+    var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle");
+    adSlot1.setTargeting("position", "x02");
+    adSlot1.addService(googletag.pubads());
+    */
 
-/*
-var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom");
-adSlot2.setTargeting("position", "x03");
-adSlot2.addService(googletag.pubads());
-*/
+    /*
+    var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom");
+    adSlot2.setTargeting("position", "x03");
+    adSlot2.addService(googletag.pubads());
+    */
+} else {
+    var DFP_sitepage = "DMN/interactives";
+    DFPSlotSizes = [728, 90]
+    var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop");
+    adSlot0.setTargeting("position", "Top");
+    adSlot0.addService(googletag.pubads());
+
+    /*
+    var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle");
+    adSlot1.setTargeting("position", "Top");
+    adSlot1.addService(googletag.pubads());
+    */
+
+    /*
+    var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom");
+    adSlot2.setTargeting("position", "Top");
+    adSlot2.addService(googletag.pubads());
+    */
 }
-else
-{
-var DFP_sitepage = "DMN/interactives";
- DFPSlotSizes = [728,90]
-var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop");
-adSlot0.setTargeting("position", "Top");
-adSlot0.addService(googletag.pubads());
-
-/*
-var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle");
-adSlot1.setTargeting("position", "Top");
-adSlot1.addService(googletag.pubads());
-*/
-
-/*
-var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom");
-adSlot2.setTargeting("position", "Top");
-adSlot2.addService(googletag.pubads());
-*/
- }
 </script>
 <script type="text/javascript">
 googletag.pubads().enableSingleRequest();
 googletag.pubads().enableSyncRendering();
 googletag.enableServices();
 </script>
-{%endblock%}
-
-
-{%block content%}
-
+{%endblock%} {%block content%}
 <section id="contentHeader"></section>
 <!-- end contentHeader -->
-
-	<header class="initialPos">
-		<img src="images/_logo100.png" alt="100 logo" />
-		<h6><a href="http://www.pulitzer.org/centennial">The Pulitzer Prizes’ Centennial Celebration</a></h6>
-		<h4>June 2-3, 2016</h4>
-		<h1>The People, the Presidency and the Press</h1>
-		<h5><em>Presented by The Dallas Morning News in collaboration with the George Bush Presidential Center, LBJ Presidential Library, and host, the George W. Bush Presidential Center</em></h5>
-	</header>
-
+<header class="initialPos">
+    <img src="images/_logo100.png" alt="100 logo" />
+    <h6><a href="http://www.pulitzer.org/centennial">The Pulitzer Prizes’ Centennial Celebration</a></h6>
+    <h4>June 2-3, 2016</h4>
+    <h1>The People, the Presidency and the Press</h1>
+    <h5><em>Presented by The Dallas Morning News in collaboration with the George Bush Presidential Center, LBJ Presidential Library, and host, the George W. Bush Presidential Center</em></h5>
+</header>
 <section class="contentWell clearFix">
-
-
-  <div id="schedule" class="clearFix pulModule">
-
-      <h3>Schedule and Panels</h3>
-
-      <div class="leftWell">
-
-        <div class="skedBlock">
-          <iframe class="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.16103427176!2d-96.78030424883963!3d32.840987687933676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e9f0e5504224d%3A0x3e90facb0944b1e9!2sGeorge+W.+Bush+Presidential+Library+and+Museum!5e0!3m2!1sen!2sus!4v1457449273418" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-          <p>George W. Bush Presidental Center<br  />2943 SMU Boulevard<br />Dallas, Texas, 75203</p>
+    <div id="schedule" class="clearFix pulModule">
+        <h3>Schedule and Panels</h3>
+        <div class="leftWell">
+            <div class="skedBlock">
+                <iframe class="googleMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.16103427176!2d-96.78030424883963!3d32.840987687933676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e9f0e5504224d%3A0x3e90facb0944b1e9!2sGeorge+W.+Bush+Presidential+Library+and+Museum!5e0!3m2!1sen!2sus!4v1457449273418" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <p>George W. Bush Presidental Center
+                    <br />2943 SMU Boulevard
+                    <br />Dallas, Texas, 75203</p>
+            </div>
+            <!-- end skedBlock -->
+            <div class="skedBlock">
+                <h5>Thursday, June 2</h5>
+                <ul>
+                    <li>George W. Bush Presidential Center open house</li>
+                    <li>Excerpts from three Pulitzer-winning plays about the presidency</li>
+                    <li>Panel: "Presidential Biographies: The Challenges Then and Now."</li>
+                </ul>
+            </div>
+            <!-- end skedBlock -->
+            <div class="skedBlock">
+                <h5>Friday, June 3</h5>
+                <ul>
+                    <li>Panel: "The Presidency: Coverage in the Digital Age."</li>
+                    <li>Panel: "Presidents and Poverty: The Fight that Never Ends"</li>
+                    <li>Panel: "The Right to Know vs. the Responsibility to Protect: How to Tell the Difference"</li>
+                    <li>Panel: "The Politics of Polarization: Can Democracy Survive" I'm going to spell this word wrong.</li>
+                </ul>
+            </div>
+            <!-- end skedBlock -->
         </div>
-        <!-- end skedBlock -->
-
-        <div class="skedBlock">
-          <h5>Thursday, June 2</h5>
-          <ul>
-            <li>George W. Bush Presidential Center open house</li>
-            <li>Excerpts from three Pulitzer-winning plays about the presidency</li>
-            <li>Panel: "Presidential Biographies: The Challenges Then and Now."</li>
-          </ul>
+        <!-- end leftWell -->
+        <div class="rightWell">
+            <div class="dropList" id="fiveThings">
+                <div class="dropItem">
+                    <h4 class="dropHed"><i class="fa fa-minus-circle"></i> Presidential Biographies: The Challenges Then and Now</h4>
+                    <div class="dropText expandedText clearFix">
+                        <p>The explorations of journalists and historians of a president's leadership and abilities to communicate with the American people have often provided the undergirding for the functioning of our democracy. This panel discusses the significance of what we've learned from some of the best, all of whom have won Pulitzers.</p>
+                        <h6>Speakers</h6>
+                        <ul class="speakerList">
+                            <li class="activeMug"><img src="images/_meacham_p1.jpg" alt="Jon Meacham" /></li>
+                            <li><img src="images/_gordon-reed_p1.jpg" alt="Annette Gordon-Reed" /></li>
+                            <li><img src="images/_chernow_p1.jpg" alt="Ron Chernow" /></li>
+                            <li><img src="images/_updegrove_p1.jpg" alt="Mark Updegrove" /></li>
+                        </ul>
+                        <div class="speakerBlock clearFix" data-name="Jon Meacham">
+                            <img src="images/_meacham_p1.jpg" alt="Jon Meacham" />
+                            <h5><strong>Jon Meacham</strong> | Panelist</h5>
+                            <h6>Contributitng Editor, <em>Time</em></h6>
+                            <p>Meacham is a communicant of St. Thomas Church Fifth Avenue, where he has served on the Vestry of the 180 year-old Episcopal parish. He is a former member of the Board of Trustees and of the Board of Regents of The University of the South, and currently a Distinguished Visiting Professor at Vanderbilt University. Meacham also serves on the Vestry of Trinity Church Wall Street and the Leadership Council of the Harvard Divinity School. A member of the Council on Foreign Relations, he received an honorary Doctor of Humane Letters degree from the Berkeley honorary doctorates.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Annette Gordon-Reed">
+                            <img src="images/_gordon-reed_p1.jpg" alt="Annette Gordon-Reed" />
+                            <h5><strong>Annette Gordon-Reed</strong> | Panelist</h5>
+                            <h6>Professor, Harvard Law School, Harvard University and Radcliffe Institute for Advanced Study</h6>
+                            <p>Gordon-Reed won the Pulitzer Prize in History in 2009 for <em>The Hemingses of Monticello: An American Family</em> (W.W. Norton, 2009), a subject she had previously written about in <em>Thomas Jefferson and Sally Hemings: An American Controversy</em> (University Press of Virginia, 1997). She is also the author of <em>Andrew Johnson</em> (Times Books/Henry Holt, 2010). Her forthcoming book is <em>‘Most Blessed of Patriarchs’: Thomas Jefferson and the Empire of the Imagination</em> (with Peter S. Onuf). Her honors include a fellowship from the Dorothy and Lewis B. Cullman Center for Scholars and Writers at the New York Public Library, a Guggenheim Fellowship in the humanities, a MacArthur Fellowship, the National Humanities Medal, the National Book Award, and the Woman of Power & Influence Award from the National Organization for Women in New York City. Gordon-Reed was elected a fellow of the American Academy of Arts and Sciences in 2011 and is a member of the Academy’s Commission on the Humanities and Social Sciences.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Ron Chernow">
+                            <img src="images/_chernow_p1.jpg" alt="Ron Chernow" />
+                            <h5><strong>Ron Chernow</strong> | Panelist</h5>
+                            <h6>Author</h6>
+                            <p>An honors graduate of Yale and Cambridge, Ron Chernow is one of the most distinguished commentators on history, politics, business, and finance in America today. <em>The St. Louis Post­-Dispatch</em> has hailed him as “one of the pre­eminent biographers of his generation.” His first book, <em>The House of Morgan</em>, won the National Book Award as the best nonfiction book of 1990 and is considered a modern classic. The Modern Library Board voted it one of the 100 best nonfiction books published in the twentieth century. His second book, <em>The Warburgs</em>, won the prestigious George S. Eccles Prize for the best business book of 1993 and was cited by the American Library Association as one of the year’s ten best works. In reviewing his 1997 collection of essays, <em>The Death of the Banker</em>, <em>The New York Times</em> called Mr. Chernow “as elegant an architect of monumental histories as we’ve seen in decades.” His 1998 biography of John D. Rockefeller, entitled <em>Titan</em>, was nominated for a National Book Critics Circle Award for biography and remained on <em>The New York Times</em> bestseller list for sixteen weeks. Both the <em>Times</em> and <em>Time</em> magazine voted it one of the ten best books of the year, while <em>The Times of London</em> praised it as</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Mark Updegrove">
+                            <img src="images/_updegrove_p1.jpg" alt="Mark Updegrove" />
+                            <h5><strong>Mark Updegrove</strong> | Moderator</h5>
+                            <h6>Director, LBJ Presidental Library</h6>
+                            <p>Mark K. Updegrove, is the director of the LBJ Presidential Library in Austin, Texas, and the author of four books on the presidency. An analyst for ABC News on matters relating to U.S. politics and the presidency, Mr. Updegrove has written for <em>American Heritage</em>, <em>The Daily Beast</em>, <em>The Nation</em>, <em>National Geographic</em>, <em>Parade</em>, <em>Politico</em>, <em>Texas Monthly</em>, and <em>Time</em>. He has conducted exclusive interviews with five U.S. Presidents.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                    </div>
+                    <!-- end dropText -->
+                </div>
+                <!-- end dropItem -->
+                <div class="dropItem">
+                    <h4 class="dropHed"><i class="fa fa-plus-circle"></i> The Presidency: Coverage in the Digital Age</h4>
+                    <div class="dropText clearFix">
+                        <p>In the digital age, when anyone can tweet a breaking news headline or blog a public-affairs anyalysis, news organizations are changing how they cover news. Similarly, political leaders make use of digital tools, including social media, to bypass traditional media "gatekeepers" and communicate directly with targeted, usually like-minded, people. This panel looks at the impact of this digital phenomenon on coverage, presidential action and public opinion.</p>
+                        <h6>Speakers</h6>
+                        <ul class="speakerList">
+                            <li class="activeMug"><img src="images/_carroll_p2.jpg" alt="Kathleen Carroll" /></li>
+                            <li><img src="images/_knox_p2.jpg" alt="Oliver Knox" /></li>
+                            <li><img src="images/_sullivan_p2.jpg" alt="Kevin Sullivan" /></li>
+                            <li><img src="images/_gibbs_p2.jpg" alt="Robert Gibbs" /></li>
+                            <li><img src="images/_baron_p2.jpg" alt="Marty Baron" /></li>
+                        </ul>
+                        <div class="speakerBlock clearFix" data-name="Kathleen Carroll">
+                            <img src="images/_carroll_p2.jpg" alt="Kathleen Carroll" />
+                            <h5><strong>Kathleen Carroll</strong> | Panelist</h5>
+                            <h6>Senior VP and executive editor, The Associated Press</h6>
+                            <p>Kathleen Carroll, executive editor and senior vice president of The Associated Press, is the top news executive of the world’s largest independent news agency, a role she has held since 2002. She is responsible for news content in all formats from the journalists based in more than 280 bureaus and 110 countries. She is an industry leader on government challenges to press freedom and on vital security issues for journalists in war zones and other hostile environments. During her tenure the AP has significantly deepened its commitment to investigative and accountability reporting, expanded its footprint to include groundbreaking bureaus in North Korea and Myanmar, transformed the newsroom from analog to digital, modernized video operations to HD and pioneered the use of automation to free journalists for more substantive work.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Oliver Knox">
+                            <img src="images/_knox_p2.jpg" alt="Oliver Knox" />
+                            <h5><strong>Oliver Knox</strong> | Panelist</h5>
+                            <h6>Chief Washington correspondent, Yahoo News</h6>
+                            <p>Olivier Knox is Chief Washington Correspondent for Yahoo News, where he has covered the White House, politics and foreign policy since February 2012. Before that, he was at Agence France­Presse for 15 years, covering stories like the impeachment of Bill Clinton and Al Gore's 2000 campaign. He covered the White House for all eight years of George W. Bush's presidency (ask Olivier about the shoe­throwing). He got his BA in International Affairs from Columbia and his MA in Latin American Studies from the Johns Hopkins School of Advanced International Studies. He grew up in Middlebury, Vermont and Paris, France, and currently lives just outside of Washington with his wife and son. He can be found on the Twitter machine at @oknox</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Kevin Sullivan">
+                            <img src="images/_sullivan_p2.jpg" alt="Kevin Sullivan" />
+                            <h5><strong>Kevin Sullivan</strong> | Panelist</h5>
+                            <h6>Former White House communications director</h6>
+                            <p>As Senior Advisor for External Affairs, Kevin Sullivan leads communications and marketing efforts across all areas of the Bush Center, including the Bush Institute and the Bush Presidential Library and Museum. Sullivan was appointed by President George W. Bush as Assistant to the President for Communications in July 2006, where he oversaw message development and communications planning. His responsibilities also included oversight of the White House web site; the rapid response operation; outreach to regional and specialty media; and the production of Presidential events. Prior to working in the White House, Sullivan served as the Senate-confirmed Assistant Secretary for Communications and Outreach at the U.S. Department of Education. Before his move to Washington, Sullivan held senior leadership roles with NBC Universal, NBC Sports and the Dallas Mavericks.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Robert Gibbs">
+                            <img src="images/_gibbs_p2.jpg" alt="Robert Gibbs" />
+                            <h5><strong>Robert Gibbs</strong> | Panelist</h5>
+                            <h6>Former White House press secretary</h6>
+                            <p></p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Marty Baron">
+                            <img src="images/_baron_p2.jpg" alt="Marty Baron" />
+                            <h5><strong>Marty Baron</strong> | Moderator</h5>
+                            <h6>Executive Editor, <em>Washington Post</em></h6>
+                            <p>Martin “Marty” Baron became executive editor of The Washington Post on January 2, 2013. He oversees the Post’s print and digital news operations and a staff of about 700 journalists. In 2014, The Post won two Pulitzer Prices, one in the category of public service for revelations of secret surveillance by the National Security Agency and the other for explanatory journalism about food stamps in America. In 2015, The Post won the Pulitzer Prize for national reporting for its coverage of security lapses in the Secret Service.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                    </div>
+                    <!-- end dropText -->
+                </div>
+                <!-- end dropItem -->
+                <div class="dropItem">
+                    <h4 class="dropHed"><i class="fa fa-plus-circle"></i> Presidents and Poverty: The Fight that Never Ends</h4>
+                    <div class="dropText clearFix">
+                        <p>A succession of presidents have made fighting poverty and helping impoverished Americans confront and overcome poverty a top issue of their administration. This panel features former administration officials and prize-winning journalists who have wrestled with these issues. We focus the discussion on domestic poverty and its implications, the growing income disparity in the U.S., poverty's impact on real people and how it shapes communities.</p>
+                        <h6>Speakers</h6>
+                        <ul class="speakerList">
+                            <li class="activeMug"><img src="images/_saslow_p3.jpg" alt="Eli Saslow" /></li>
+                            <li><img src="images/_grigsby_p3.jpg" alt="Sharon Grigsby" /></li>
+                            <li><img src="images/_bridgeland_p3.jpg" alt="John M. Bridgeland" /></li>
+                            <li><img src="images/_califano_p3.jpg" alt="Joseph Califano" /></li>
+                            <li><img src="images/_robinson_p3.jpg" alt="Eugene Robinson" /></li>
+                        </ul>
+                        <div class="speakerBlock clearFix" data-name="Eli Saslow">
+                            <img src="images/_saslow_p3.jpg" alt="Eli Saslow" />
+                            <h5><strong>Eli Saslow</strong> | Panelist</h5>
+                            <h6>Reporter, <em>Washington Post</em></h6>
+                            <p>Eli Saslow is a journalist for The Washington Post, where he works on the national staff. He is a 2014 winner of the Pulitzer Prize, a recipient of the George Polk award and other honors. He is author of Ten Letters: The Stories Americans Tell Their President (Random House, 2012). He also writes for ESPN the Magazine and three of his works have appeared in the anthology Best American Sports Writing. He lives with his wife and their three children in Portland, Or."</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Sharon Grigsby">
+                            <img src="images/_grigsby_p3.jpg" alt="Sharon Grigsby" />
+                            <h5><strong>Sharon Grigsby</strong> | Panelist</h5>
+                            <h6>Director of <em>The Dallas Morning News’</em> Bridging Dallas’ North-South Gap project</h6>
+                            <p>After working at newspapers in New York and Detroit, Sharon Grigsby joined The Dallas Morning News as a young editor who expected to be back in Texas for only a year or two. But landing in the middle of one of the country’s most intensive newspaper wars, she  went on to work in most every nook and cranny of the DMN, including national news, politics, features, religion and local news – culminating in running the Metro operation -- before joining the Editorial Board. Sharon, 59, divides her time these days between writing editorials and directing the department’s “Bridging Dallas’ North-South Gap” project, which won the 2010 Pulitzer Prize for Editorial Writing. After several decades as an editor, she’s “exceedingly jazzed” to be writing again, especially looking for ways to make Dallas a smarter city.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="John M. Bridgeland">
+                            <img src="images/_bridgeland_p3.jpg" alt="John M. Bridgeland" />
+                            <h5><strong>John M. Bridgeland</strong> | Panelist</h5>
+                            <h6>President/CEO of Civic Enterprises</h6>
+                            <p>John Bridgeland is Founder & CEO of Civic Enterprises, Co-Chair of The Service Year Alliance of The Aspen Institute to make a year of national service a common expectation and opportunity for all 18-28 year olds, Co-Convener of GradNation to reach a 90 percent high school graduation rate nationally by 2020, and Vice Chairman of Malaria No More, a nonprofit working to end malaria deaths in Africa. Previously, Bridgeland was appointed by President Obama to serve on the White House Council for Community Solutions. He also served as Director of the White House Domestic Policy Council, Assistant to the President of the United States, and first Director of the USA Freedom Corps under President George W. Bush. Bridgeland is author of the book, Heart of the Nation: Volunteering and America’s Civic Spirit. He is a member of the Bipartisan Policy Center’s Commission on Political Reform. He is a graduate of Harvard College and the University of Virginia School of Law and has given commencement addresses at the College of William & Mary, Johns Hopkins University, Saint Anselm College, Hamline University and Ripon College. In addition, he was named a Non-Profit Executive of the Year in 2009 for his work in developing the Serve America Act that was signed into law. He recently received the Lifetime Achievement Award from the Intercollegiate Tennis Association.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Joseph Califano">
+                            <img src="images/_califano_p3.jpg" alt="Joseph Califano" />
+                            <h5><strong>Joseph Califano</strong> | Panelist</h5>
+                            <h6>Founder, Center on Addiction and Substance Abuse, Columbia University</h6>
+                            <p>Joseph A. Califano, Jr. was President Lyndon B. Johnson’s chiefdomestic policy aide from 1965 until 1969 and Secretary of Health Education, and Welfare in the Carter Administration from 1977 to 1979. On President Johnson’s White House staff, he was responsible for coordinating the legislative program and economic policy and for handling domestic crises. The New York Times called him Deputy President for Domestic Affairs. He is Founder of the National Center on Addiction and Substance Abuse which he started in 1992, and has practiced law in Washington, D.C. and New York City. He and his wife Hilary are parents of five and grandparents of nine. They live in Westport, Connecticut.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Eugene Robinson">
+                            <img src="images/_robinson_p3.jpg" alt="Eugene Robinson" />
+                            <h5><strong>Eugene Robinson</strong> | Moderator</h5>
+                            <h6>Columnist, <em>Washington Post</em></h6>
+                            <p></p>
+                        </div>
+                        <!-- end speakerBlock -->
+                    </div>
+                    <!-- end dropText -->
+                </div>
+                <!-- end dropItem -->
+                <div class="dropItem">
+                    <h4 class="dropHed"><i class="fa fa-plus-circle"></i> The Right to Know vs. the Responsibility to Protect: How to Tell the Difference</h4>
+                    <div class="dropText clearFix">
+                        <p><em>The Guardian</em>and <em>Washington Post</em> shared the 2014 Pulitzer Prize for Public Service for their exposure of the surveillance activities of the NSA following the leaks of Edward Snowden. Where does the people’s right to know rub up against government’s responsibility to protect? How do administration officials and journalists navigate these competing interests? It’s a natural tension that transcends party, administration, news organizations. What criteria do administration officials use to determine what to keep classified? Is transparency a double-edged sword? What sorts of guidelines should news organizations employ in discerning what’s newsworthy? </p>
+                        <h6>Speakers</h6>
+                        <ul class="speakerList">
+                            <li class="activeMug"><img src="images/_abramson_p4.jpg" alt="Jill Abramson" /></li>
+                            <li><img src="images/_downie_p4.jpg" alt="Len Downie" /></li>
+                            <li><img src="images/_panetta_p4.jpg" alt="Leon Panetta" /></li>
+                            <li><img src="images/_hayden_p4.jpg" alt="Gen. Michael Hayden" /></li>
+                            <li><img src="images/_coll_p4.jpg" alt="Steve Coll" /></li>
+                        </ul>
+                        <div class="speakerBlock clearFix" data-name="Jill Abramson">
+                            <img src="images/_abramson_p4.jpg" alt="Jill Abramson" />
+                            <h5><strong>Jill Abramson</strong> | Panelist</h5>
+                            <h6>Fromer executive editor,<em>The New York Times</em></h6>
+                            <p>Jill Abramson is a journalist who spent the last 17 years in the most senior editorial positions at The New York Times, where she was the first woman to serve as Washington Bureau Chief, Managing Editor and Executive Editor. Before joining the Times, she was Deputy Washington Bureau Chief and an investigative reporter covering money and politics at The Wall Street Journal for nine years. She is the author of three books including Strange Justice, which she wrote with Jane Mayer. Before joining Harvard's English Department as a lecturer teaching non-fiction narrative writing, she taught undergraduate writing seminars at Yale for five years and at Princeton.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Len Downie">
+                            <img src="images/_downie_p4.jpg" alt="Len Downie" />
+                            <h5><strong>Len Downie</strong> | Panelist</h5>
+                            <h6>Editor emeritus, <em>Washington Post</em></h6>
+                            <p>Leonard Downie Jr., the Weil Family Professor of Journalism at Arizona State University’s Walter Cronkite School of Journalism and Mass Communication, was executive editor of The Washington Post from 1991 to 2008. During his 44 years in The Washington Post newsroom, he was also an investigative reporter, editor of the local and national news staffs, London correspondent, and, from 1984 to 1991, managing editor under then executive editor Ben Bradlee. As deputy Metro editor from 1972 to 1974, Downie helped supervise the newspaper’s Watergate coverage. He oversaw the newspaper’s coverage of every national election from 1984 through 2008. During his 17 years as executive editor, The Washington Post news staff won 25 Pulitzer prizes. Downie received Bachelor’s, Master’s and honorary Doctor of Humane Letters degrees from The Ohio State University.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Leon Panetta">
+                            <img src="images/_panetta_p4.jpg" alt="Leon Panetta" />
+                            <h5><strong>Leon Panetta</strong> | Panelist</h5>
+                            <h6>Former director, CIA</h6>
+                            <p>Co-founder of The Panetta Institute for Public Policy, Leon Panetta returned to the Institute on Over the years Secretary Panetta has served on numerous boards and commissions. He co-chaired California Forward, the Joint Ocean Commission Initiative and Governor Schwarzenegger’s Council on Base Support and Retention.  In 2006, he served on the Iraq Study Group, a bipartisan national commission seeking a new course for the war in Iraq. Presently, Secretary Panetta serves on the boards of directors for Oracle, Blue Shield of California as well as the Commission on Presidential Debates. In addition, he is an advisor to FleishmanHillard. February 27, 2013, after serving as the 23rd Secretary of Defense.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Gen. Michael Hayden">
+                            <img src="images/_hayden_p4.jpg" alt="Gen. Michael Hayden" />
+                            <h5><strong>Gen. Michael Hayden</strong> | Panelist</h5>
+                            <h6>Former director, NSA, CIA</h6>
+                            <p>General Michael Hayden is a Principal at The Chertoff Group, a premier global advisory firm that focuses exclusively on the security and risk management sector by providing consulting, mergers and acquisitions (M&A), and risk management services to clients seeking to secure and grow their enterprises. At The Chertoff Group, General Hayden uses his broad geographic and political knowledge to brief clients on intelligence matters worldwide – including any developments in cybersecurity that may affect their businesses. General Hayden served as the Director of the CIA from 2006 to 2009, where he was responsible for overseeing all information concerning the plans, intentions and capabilities of America’s adversaries, producing timely analysis for decision makers, and conducting covert operations to thwart terrorists and other enemies of the US. Prior to his role at the CIA, General Hayden was the country’s first Principal Deputy Director of National Intelligence and was the highest ranking intelligence office in the armed forces. Additionally, he served as Commander of the Air Intelligence Agency, Director of the Joint Command and Control Warfare Center, Director of the National Security Agency and Chief of the Central Security Service.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Steve Coll">
+                            <img src="images/_coll_p4.jpg" alt="Steve Coll" />
+                            <h5><strong>Steve Coll</strong> | Moderator</h5>
+                            <h6>Dean of Columbia Journalism School</h6>
+                            <p>Dean Steve Coll is a staff writer at The New Yorker, the author of seven books of nonfiction, and a two-time winner of the Pulitzer Prize. Between 1985 and 2005, he was a reporter, foreign correspondent and senior editor at the Washington Post. There he covered Wall Street, served as the paper’s South Asia correspondent, and was the Post’s first international investigative correspondent, based in London. Over the years, he won the Gerald R. Loeb Award for his business coverage; the Livingston Award for his work from India and Pakistan; and the Robert F. Kennedy Award for his coverage of the civil war in Sierra Leone. He served as managing editor of the Post between 1998 and 2004. The following year, he joined The New Yorker, where he has written on international politics, American politics and national security, intelligence controversies and the media.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                    </div>
+                    <!-- end dropText -->
+                </div>
+                <!-- end dropItem -->
+                <div class="dropItem">
+                    <h4 class="dropHed"><i class="fa fa-plus-circle"></i> The Politics of Polarization: Can Democracy Survive?</h4>
+                    <div class="dropText clearFix">
+                        <p>Are American politics today more polarized than ever before? Why is that? Or if not, why does it seem so? Is this good or bad? Is our democracy eroding in the face of demographic fracturing, increased class warfare and exacerbating fear and distrust? What can/should our leaders do about it? What can we do about it?</p>
+                        <h6>Speakers</h6>
+                        <ul class="speakerList">
+                            <li class="activeMug"><img src="images/_stephens_p5.jpg" alt="Bret Stephens" /></li>
+                            <li><img src="images/_mccarty_p5.jpg" alt="Nolan McCarty" /></li>
+                            <li><img src="images/_mccurry_p5.jpg" alt="Mike McCurry" /></li>
+                            <li><img src="images/_navarro_p5.jpg" alt="Ana Navarro" /></li>
+                            <li><img src="images/_allen_p5.jpg" alt="Danielle Allen" /></li>
+                        </ul>
+                        <div class="speakerBlock clearFix" data-name="Bret Stephens">
+                            <img src="images/_stephens_p5.jpg" alt="Bret Stephens" />
+                            <h5><strong>Bret Stephens</strong> | Panelist</h5>
+                            <h6>Deputy editorial page editor and columnist,<em>The Wall Street Journal</em></h6>
+                            <p>Bret Stephens writes "Global View," the Wall Street Journal's principal column on foreign affairs, for which he won the 2013 Pulitzer Prize for commentary. He is the paper's deputy editorial page editor, responsible for its global opinion pages, and a member of the editorial board. Previously, he was editor­in­chief of The Jerusalem Post. His book, "America in Retreat: The New Isolationism and the Coming Global Disorder" was recently reissued in paperback by Sentinel Books. He lives in New York City with his wife Corinna, a classical music critic for the New York Times, and their three children.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Nolan McCarty">
+                            <img src="images/_mccarty_p5.jpg" alt="Nolan McCarty" />
+                            <h5><strong>Nolan McCarty</strong> | Panelist</h5>
+                            <h6>Chair, Department of Politics, Princeton University</h6>
+                            <p>Nolan McCarty is the Susan Dod Brown Professor of Politics and Public Affairs and Chair of the Department of Politics. He was formerly the associate dean at the Woodrow Wilson School of Public and International Affairs. His research interests include U.S. politics, democratic political institutions, and political game theory. He is the recipient of the Robert Eckles Swain National Fellowship from the Hoover Institution and the John M. Olin Fellowship in Political Economy. He has co­authored three books: Political Game Theory (2006, Cambridge University Press with Adam Meirowitz), Polarized America: The Dance of Ideology and Unequal Riches (2006, MIT Press with Keith Poole and Howard Rosenthal) and Political Bubbles: Financial Crises and the Failure of American Democracy (with Keith Poole and Howard Rosenthal). In 2010, he was elected a fellow of the American Academy of Arts and Sciences. He earned his A.B. from the University of Chicago and his PhD from Carnegie Mellon University.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Mike McCurry">
+                            <img src="images/_mccurry_p5.jpg" alt="Mike McCurry" />
+                            <h5><strong>Mike McCurry</strong> | Panelist</h5>
+                            <h6>Former White House press secretary</h6>
+                            <p>Mike McCurry is a Distinguished Professor of Public Theology at the Wesley Theological Seminary in Washington, DC and a partner at Public Strategies Washington, Inc., where he provides counsel on communi-cations strategies and management to corporate and non-profit clients. McCurry is a veteran political strategist and spokesperson with nearly four decades of experience in the nation’s capital. McCurry served in the White House as press secretary to President Bill Clinton (1995-1998). He also served as spokesman for the U.S. Department of State (1993-1995) and director of communications for the Democratic National Committee (1988-1990). McCurry held a variety of leadership roles in national campaigns for the Democratic ticket from 1984 to 2004.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Ana Navarro">
+                            <img src="images/_navarro_p5.jpg" alt="Ana Navarro" />
+                            <h5><strong>Ana Navarro</strong> | Panelist</h5>
+                            <h6>CNN conservative commentator</h6>
+                            <p></p>
+                        </div>
+                        <!-- end speakerBlock -->
+                        <div class="speakerBlock clearFix hidden" data-name="Danielle Allen">
+                            <img src="images/_allen_p5.jpg" alt="Danielle Allen" />
+                            <h5><strong>Danielle Allen</strong> | Moderator</h5>
+                            <h6>Political scientist/director of Harvard’s Edmon J. Safra Center for Ethics</h6>
+                            <p>Danielle Allen is Director of the Edmond J. Safra Center for Ethics at Harvard University and professor in Harvard’s Department of Government and Graduate School of Education. She is a political theorist who has published broadly in democratic theory, political sociology, and the history of political thought. Widely known for her work on justice and citizenship in both ancient Athens and modern America, Allen is the author of The World of Prometheus: The Politics of Punishing in Democratic Athens (2000), Talking to Strangers: Anxieties of Citizenship since Brown vs. the Board of Education (2004), Why Plato Wrote (2010), and Our Declaration: A Reading of the Declaration of Independence in Defense of Equality (Norton/Liveright Books, June 2014). She is the co­editor of the award­winning Education, Justice, and Democracy (2013, with Rob Reich) and From Voice to Influence: Understanding Citizenship in the Digital Age (2015, with Jennifer Light). She is a Chair of the Mellon Foundation Board, past Chair of the Pulitzer Prize Board, and a member of the American Academy of Arts and Sciences and American Philosophical Society.</p>
+                        </div>
+                        <!-- end speakerBlock -->
+                    </div>
+                    <!-- end dropText -->
+                </div>
+                <!-- end dropItem -->
+            </div>
+            <!-- end dropList -->
         </div>
-        <!-- end skedBlock -->
-
-        <div class="skedBlock">
-          <h5>Friday, June 3</h5>
-          <ul>
-            <li>Panel: "The Presidency: Coverage in the Digital Age."</li>
-            <li>Panel: "Presidents and Poverty: The Fight that Never Ends"</li>
-            <li>Panel: "The Right to Know vs. the Responsibility to Protect: How to Tell the Difference"</li>
-            <li>Panel: "The Politics of Polarization: Can Democracy Survive" I'm going to spell this word wrong.</li>
-          </ul>
+        <!-- end rightWell -->
+    </div>
+    <!-- end schedule -->
+    <div id="dmnPulitzers" class="clearFix pulModule">
+        <h3>THE DALLAS MORNING NEWS PULITZER PRIZES</h3>
+        <div class="rightWell">
+            <div id="dmnSlideshow">
+                <h5>Photo gallery</h5>
+                <div id="slideContainer">
+                    <div class="dmnSlide">
+                        <img src="images/_slide_1991_1.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>1991: Feature Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_1991_2.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>1991: Feature Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_1991_3.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>1991: Feature Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_1993_1.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>1993: Spot News Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_1993_2.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>1993: Spot News Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_1993_3.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>1993: Spot News Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_2004_1.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>2004: Breaking News Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_2004_2.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>2004: Breaking News Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_2004_3.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>2004: Breaking News Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_2006_1.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>2006: Breaking News Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_2006_2.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>2006: Breaking News Photography</p>
+                        </div>
+                    </div>
+                    <div class="dmnSlide">
+                        <img src="images/_slide_2006_3.jpg" alt="?">
+                        <div class="slideCaption">
+                            <p>2006: Breaking News Photography</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- end skedBlock -->
-
-      </div>
-      <!-- end leftWell -->
-
-      <div class="rightWell">
-        <div class="dropList" id="fiveThings">
-
-          <div class="dropItem">
-              <h4 class="dropHed"><i class="fa fa-minus-circle"></i> Presidential Biographies: The Challenges Then and Now</h4>
-              <div class="dropText expandedText clearFix">
-                <p>The explorations of journalists and historians of a president's leadership and abilities to communicate with the American people have often provided the undergirding for the functioning of our democracy. This panel discusses the significance of what we've learned from some of the best, all of whom have won Pulitzers.</p>
-
-                <h6>Speakers</h6>
-                <ul class="speakerList">
-                  <li class="activeMug"><img src="images/_meacham_p1.jpg" alt="Jon Meacham" /></li>
-                  <li><img src="images/_gordon-reed_p1.jpg" alt="Annette Gordon-Reed" /></li>
-                  <li><img src="images/_chernow_p1.jpg" alt="Ron Chernow" /></li>
-                  <li><img src="images/_updegrove_p1.jpg" alt="Mark Updegrove" /></li>
-                </ul>
-
-                <div class="speakerBlock clearFix" data-name="Jon Meacham">
-                    <img src="images/_meacham_p1.jpg" alt="Jon Meacham" />
-                    <h5><strong>Jon Meacham</strong> | Panelist</h5>
-                    <h6>Contributitng Editor, <em>Time</em></h6>
-                    <p>Meacham is a communicant of St. Thomas Church Fifth Avenue, where he has served on the Vestry of the 180 year-old Episcopal parish. He is a former member of the Board of Trustees and of the Board of Regents of The University of the South, and currently a Distinguished Visiting Professor at Vanderbilt University. Meacham also serves on the Vestry of Trinity Church Wall Street and the Leadership Council of the Harvard Divinity School. A member of the Council on Foreign Relations, he received an honorary Doctor of Humane Letters degree from the Berkeley honorary doctorates.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Annette Gordon-Reed">
-                    <img src="images/_gordon-reed_p1.jpg" alt="Annette Gordon-Reed" />
-                    <h5><strong>Annette Gordon-Reed</strong> | Panelist</h5>
-                    <h6>Professor, Harvard Law School, Harvard University and Radcliffe Institute for Advanced Study</h6>
-                    <p>Gordon-Reed won the Pulitzer Prize in History in 2009 for <em>The Hemingses of Monticello: An American Family</em> (W.W. Norton, 2009), a subject she had previously written about in <em>Thomas Jefferson and Sally Hemings: An American Controversy</em> (University Press of Virginia, 1997). She is also the author of <em>Andrew Johnson</em> (Times Books/Henry Holt, 2010). Her forthcoming book is <em>‘Most Blessed of Patriarchs’: Thomas Jefferson and the Empire of the Imagination</em> (with Peter S. Onuf). Her honors include a fellowship from the Dorothy and Lewis B. Cullman Center for Scholars and Writers at the New York Public Library, a Guggenheim Fellowship in the humanities, a MacArthur Fellowship, the National Humanities Medal, the National Book Award, and the Woman of Power & Influence Award from the National Organization for Women in New York City. Gordon-Reed was elected a fellow of the American Academy of Arts and Sciences in 2011 and is a member of the Academy’s Commission on the Humanities and Social Sciences.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Ron Chernow">
-                    <img src="images/_chernow_p1.jpg" alt="Ron Chernow" />
-                    <h5><strong>Ron Chernow</strong> | Panelist</h5>
-                    <h6>Author</h6>
-                    <p>An honors graduate of Yale and Cambridge, Ron Chernow is one of the most distinguished commentators on history, politics, business, and finance in America today. <em>The St. Louis Post­-Dispatch</em> has hailed him as “one of the pre­eminent biographers of his generation.” His first book, <em>The House of Morgan</em>, won the National Book Award as the best nonfiction book of 1990 and is considered a modern classic. The Modern Library Board voted it one of the 100 best nonfiction books published in the twentieth century. His second book, <em>The Warburgs</em>, won the prestigious George S. Eccles Prize for the best business book of 1993 and was cited by the American Library Association as one of the year’s ten best works. In reviewing his 1997 collection of essays, <em>The Death of the Banker</em>, <em>The New York Times</em> called Mr. Chernow “as elegant an architect of monumental histories as we’ve seen in decades.” His 1998 biography of John D. Rockefeller, entitled <em>Titan</em>, was nominated for a National Book Critics Circle Award for biography and remained on <em>The New York Times</em> bestseller list for sixteen weeks. Both the <em>Times</em> and <em>Time</em> magazine voted it one of the ten best books of the year, while <em>The Times of London</em> praised it as</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Mark Updegrove">
-                    <img src="images/_updegrove_p1.jpg" alt="Mark Updegrove" />
-                    <h5><strong>Mark Updegrove</strong> | Moderator</h5>
-                    <h6>Director, LBJ Presidental Library</h6>
-                    <p>Mark K. Updegrove, is the director of the LBJ Presidential Library in Austin, Texas, and the author of four books on the presidency. An analyst for ABC News on matters relating to U.S. politics and the presidency, Mr. Updegrove has written for <em>American Heritage</em>, <em>The Daily Beast</em>, <em>The Nation</em>, <em>National Geographic</em>, <em>Parade</em>, <em>Politico</em>, <em>Texas Monthly</em>, and <em>Time</em>. He has conducted exclusive interviews with five U.S. Presidents.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-              </div>
-              <!-- end dropText -->
-          </div>
-          <!-- end dropItem -->
-
-          <div class="dropItem">
-              <h4 class="dropHed"><i class="fa fa-plus-circle"></i> The Presidency: Coverage in the Digital Age</h4>
-              <div class="dropText clearFix">
-                <p>In the digital age, when anyone can tweet a breaking news headline or blog a public-affairs anyalysis, news organizations are changing how they cover news. Similarly, political leaders make use of digital tools, including social media, to bypass traditional media "gatekeepers" and communicate directly with targeted, usually like-minded, people. This panel looks at the impact of this digital phenomenon on coverage, presidential action and public opinion.</p>
-
-                <h6>Speakers</h6>
-                <ul class="speakerList">
-                  <li class="activeMug"><img src="images/_carroll_p2.jpg" alt="Kathleen Carroll" /></li>
-                  <li><img src="images/_knox_p2.jpg" alt="Oliver Knox" /></li>
-                  <li><img src="images/_sullivan_p2.jpg" alt="Kevin Sullivan" /></li>
-                  <li><img src="images/_gibbs_p2.jpg" alt="Robert Gibbs" /></li>
-                  <li><img src="images/_baron_p2.jpg" alt="Marty Baron" /></li>
-                </ul>
-
-                <div class="speakerBlock clearFix" data-name="Kathleen Carroll">
-                    <img src="images/_carroll_p2.jpg" alt="Kathleen Carroll" />
-                    <h5><strong>Kathleen Carroll</strong> | Panelist</h5>
-                    <h6>Senior VP and executive editor, The Associated Press</h6>
-                    <p>Kathleen Carroll, executive editor and senior vice president of The Associated Press, is the top news executive of the world’s largest independent news agency, a role she has held since 2002. She is responsible for news content in all formats from the journalists based in more than 280 bureaus and 110 countries. She is an industry leader on government challenges to press freedom and on vital security issues for journalists in war zones and other hostile environments. During her tenure the AP has significantly deepened its commitment to investigative and accountability reporting, expanded its footprint to include groundbreaking bureaus in North Korea and Myanmar, transformed the newsroom from analog to digital, modernized video operations to HD and pioneered the use of automation to free journalists for more substantive work.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Oliver Knox">
-                    <img src="images/_knox_p2.jpg" alt="Oliver Knox" />
-                    <h5><strong>Oliver Knox</strong> | Panelist</h5>
-                    <h6>Chief Washington correspondent, Yahoo News</h6>
-                    <p>Olivier Knox is Chief Washington Correspondent for Yahoo News, where he has covered the White House, politics and foreign policy since February 2012. Before that, he was at Agence France­Presse for 15 years, covering stories like the impeachment of Bill Clinton and Al Gore's 2000 campaign. He covered the White House for all eight years of George W. Bush's presidency (ask Olivier about the shoe­throwing). He got his BA in International Affairs from Columbia and his MA in Latin American Studies from the Johns Hopkins School of Advanced International Studies. He grew up in Middlebury, Vermont and Paris, France, and currently lives just outside of Washington with his wife and son. He can be found on the Twitter machine at @oknox</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Kevin Sullivan">
-                    <img src="images/_sullivan_p2.jpg" alt="Kevin Sullivan" />
-                    <h5><strong>Kevin Sullivan</strong> | Panelist</h5>
-                    <h6>Former White House communications director</h6>
-                    <p>As Senior Advisor for External Affairs, Kevin Sullivan leads communications and marketing efforts across all areas of the Bush Center, including the Bush Institute and the Bush Presidential Library and Museum. Sullivan was appointed by President George W. Bush as Assistant to the President for Communications in July 2006, where he oversaw message development and communications planning. His responsibilities also included oversight of the White House web site; the rapid response operation; outreach to regional and specialty media; and the production of Presidential events. Prior to working in the White House, Sullivan served as the Senate-confirmed Assistant Secretary for Communications and Outreach at the U.S. Department of Education. Before his move to Washington, Sullivan held senior leadership roles with NBC Universal, NBC Sports and the Dallas Mavericks.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Robert Gibbs">
-                    <img src="images/_gibbs_p2.jpg" alt="Robert Gibbs" />
-                    <h5><strong>Robert Gibbs</strong> | Panelist</h5>
-                    <h6>Former White House press secretary</h6>
-                    <p></p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Marty Baron">
-                    <img src="images/_baron_p2.jpg" alt="Marty Baron" />
-                    <h5><strong>Marty Baron</strong> | Moderator</h5>
-                    <h6>Executive Editor, <em>Washington Post</em></h6>
-                    <p>Martin “Marty” Baron became executive editor of The Washington Post on January 2, 2013. He oversees the Post’s print and digital news operations and a staff of about 700 journalists. In 2014, The Post won two Pulitzer Prices, one in the category of public service for revelations of secret surveillance by the National Security Agency and the other for explanatory journalism about food stamps in America. In 2015, The Post won the Pulitzer Prize for national reporting for its coverage of security lapses in the Secret Service.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-              </div>
-              <!-- end dropText -->
-          </div>
-          <!-- end dropItem -->
-
-          <div class="dropItem">
-              <h4 class="dropHed"><i class="fa fa-plus-circle"></i> Presidents and Poverty: The Fight that Never Ends</h4>
-              <div class="dropText clearFix">
-                <p>A succession of presidents have made fighting poverty and helping impoverished Americans confront and overcome poverty a top issue of their administration. This panel features former administration officials and prize-winning journalists who have wrestled with these issues. We focus the discussion on domestic poverty and its implications, the growing income disparity in the U.S., poverty's impact on real people and how it shapes communities.</p>
-
-                <h6>Speakers</h6>
-                <ul class="speakerList">
-                  <li class="activeMug"><img src="images/_saslow_p3.jpg" alt="Eli Saslow" /></li>
-                  <li><img src="images/_grigsby_p3.jpg" alt="Sharon Grigsby" /></li>
-                  <li><img src="images/_bridgeland_p3.jpg" alt="John M. Bridgeland" /></li>
-                  <li><img src="images/_califano_p3.jpg" alt="Joseph Califano" /></li>
-                  <li><img src="images/_robinson_p3.jpg" alt="Eugene Robinson" /></li>
-                </ul>
-
-                <div class="speakerBlock clearFix" data-name="Eli Saslow">
-                    <img src="images/_saslow_p3.jpg" alt="Eli Saslow" />
-                    <h5><strong>Eli Saslow</strong> | Panelist</h5>
-                    <h6>Reporter, <em>Washington Post</em></h6>
-                    <p>Eli Saslow is a journalist for The Washington Post, where he works on the national staff. He is a 2014 winner of the Pulitzer Prize, a recipient of the George Polk award and other honors. He is author of Ten Letters: The  Stories Americans Tell Their President (Random House, 2012). He also writes for ESPN the Magazine and  three of his works have appeared in the anthology Best American Sports Writing. He lives with his wife and their three children in Portland, Or."</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Sharon Grigsby">
-                    <img src="images/_grigsby_p3.jpg" alt="Sharon Grigsby" />
-                    <h5><strong>Sharon Grigsby</strong> | Panelist</h5>
-                    <h6>Director of <em>The Dallas Morning News’</em> Bridging Dallas’ North-South Gap project</h6>
-                    <p>After working at newspapers in New York and Detroit, Sharon Grigsby joined The Dallas Morning News as a young editor who expected to be back in Texas for only a year or two. But landing in the middle of one of the country’s most intensive newspaper wars, she  went on to work in most every nook and cranny of the DMN, including national news, politics, features, religion and local news – culminating in running the Metro operation -- before joining the Editorial Board. Sharon, 59, divides her time these days between writing editorials and directing the department’s “Bridging Dallas’ North-South Gap” project, which won the 2010 Pulitzer Prize for Editorial Writing. After several decades as an editor, she’s “exceedingly jazzed” to be writing again, especially looking for ways to make Dallas a smarter city.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="John M. Bridgeland">
-                    <img src="images/_bridgeland_p3.jpg" alt="John M. Bridgeland" />
-                    <h5><strong>John M. Bridgeland</strong> | Panelist</h5>
-                    <h6>President/CEO of Civic Enterprises</h6>
-                    <p>John Bridgeland is Founder & CEO of Civic Enterprises, Co-Chair of The Service Year Alliance of The Aspen Institute to make a year of national service a common expectation and opportunity for all 18-28 year olds, Co-Convener of GradNation to reach a 90 percent high school graduation rate nationally by 2020, and Vice Chairman of Malaria No More, a nonprofit working to end malaria deaths in Africa. Previously, Bridgeland was appointed by President Obama to serve on the White House Council for Community Solutions. He also served as Director of the White House Domestic Policy Council, Assistant to the President of the United States, and first Director of the USA Freedom Corps under President George W. Bush. Bridgeland is author of the book, Heart of the Nation: Volunteering and America’s Civic Spirit.  He is a member of the Bipartisan Policy Center’s Commission on Political Reform. He is a graduate of Harvard College and the University of Virginia School of Law and has given commencement addresses at the College of William & Mary, Johns Hopkins University, Saint Anselm College, Hamline University and Ripon College. In addition, he was named a Non-Profit Executive of the Year in 2009 for his work in developing the Serve America Act that was signed into law.  He recently received the Lifetime Achievement Award from the Intercollegiate Tennis Association.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Joseph Califano">
-                    <img src="images/_califano_p3.jpg" alt="Joseph Califano" />
-                    <h5><strong>Joseph Califano</strong> | Panelist</h5>
-                    <h6>Founder, Center on Addiction and Substance Abuse, Columbia University</h6>
-                    <p>Joseph A. Califano, Jr. was President Lyndon B. Johnson’s chiefdomestic policy aide from 1965 until 1969 and Secretary of Health Education, and Welfare in the Carter Administration from 1977 to 1979. On President Johnson’s White House staff, he was responsible for coordinating the legislative program and economic policy and for handling domestic crises.  The New York Times called him Deputy President for Domestic Affairs. He is Founder of the National Center on Addiction and Substance Abuse which he started in 1992, and has practiced law in Washington, D.C. and New York City. He and his wife Hilary are parents of five and grandparents of nine.  They live in Westport, Connecticut.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Eugene Robinson">
-                    <img src="images/_robinson_p3.jpg" alt="Eugene Robinson" />
-                    <h5><strong>Eugene Robinson</strong> | Moderator</h5>
-                    <h6>Columnist, <em>Washington Post</em></h6>
-                    <p></p>
-                </div>
-                <!-- end speakerBlock -->
-
-              </div>
-              <!-- end dropText -->
-          </div>
-          <!-- end dropItem -->
-
-          <div class="dropItem">
-              <h4 class="dropHed"><i class="fa fa-plus-circle"></i> The Right to Know vs. the Responsibility to Protect: How to Tell the Difference</h4>
-              <div class="dropText clearFix">
-                <p><em>The Guardian</em>and <em>Washington Post</em> shared the 2014 Pulitzer Prize for Public Service for their exposure of the surveillance activities of the NSA following the leaks of Edward Snowden. Where does the people’s right to know rub up against government’s responsibility to protect? How do administration officials and journalists navigate these competing interests? It’s a natural tension that transcends party, administration, news organizations. What criteria do administration officials use to determine what to keep classified? Is transparency a double-edged sword? What sorts of guidelines should news organizations employ in discerning what’s newsworthy?  </p>
-
-                <h6>Speakers</h6>
-                <ul class="speakerList">
-                  <li class="activeMug"><img src="images/_abramson_p4.jpg" alt="Jill Abramson" /></li>
-                  <li><img src="images/_downie_p4.jpg" alt="Len Downie" /></li>
-                  <li><img src="images/_panetta_p4.jpg" alt="Leon Panetta" /></li>
-                  <li><img src="images/_hayden_p4.jpg" alt="Gen. Michael Hayden" /></li>
-                  <li><img src="images/_coll_p4.jpg" alt="Steve Coll" /></li>
-                </ul>
-
-                <div class="speakerBlock clearFix" data-name="Jill Abramson">
-                    <img src="images/_abramson_p4.jpg" alt="Jill Abramson" />
-                    <h5><strong>Jill Abramson</strong> | Panelist</h5>
-                    <h6>Fromer executive editor,<em>The New York Times</em></h6>
-                    <p>Jill Abramson is a journalist who spent the last 17 years in the most senior editorial positions at The New York Times, where she was the first woman to serve as Washington Bureau Chief, Managing Editor and  Executive Editor. Before joining the Times, she was Deputy Washington Bureau Chief and an investigative reporter covering money and politics at The Wall Street Journal for nine years. She is the author of three books including Strange Justice, which she wrote with Jane Mayer. Before joining Harvard's English Department as a lecturer teaching non-fiction narrative writing, she taught undergraduate writing seminars at Yale for five years and at Princeton.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Len Downie">
-                    <img src="images/_downie_p4.jpg" alt="Len Downie" />
-                    <h5><strong>Len Downie</strong> | Panelist</h5>
-                    <h6>Editor emeritus, <em>Washington Post</em></h6>
-                    <p>Leonard Downie Jr., the Weil Family Professor of Journalism at Arizona State University’s Walter Cronkite School of Journalism and Mass Communication, was executive editor of The Washington Post from 1991 to 2008. During his 44 years in The Washington Post newsroom, he was also an investigative reporter, editor of the local and national news staffs, London correspondent, and, from 1984 to 1991, managing editor under then executive editor Ben Bradlee. As deputy Metro editor from 1972 to 1974, Downie helped supervise the newspaper’s Watergate coverage. He oversaw the newspaper’s coverage of every national election from 1984 through 2008. During his 17 years as executive editor, The Washington Post news staff won 25 Pulitzer prizes. Downie received Bachelor’s, Master’s and honorary Doctor of Humane Letters degrees from The Ohio State University.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Leon Panetta">
-                    <img src="images/_panetta_p4.jpg" alt="Leon Panetta" />
-                    <h5><strong>Leon Panetta</strong> | Panelist</h5>
-                    <h6>Former director, CIA</h6>
-                    <p>Co-founder of The Panetta Institute for Public Policy, Leon Panetta returned to the Institute on  Over the years Secretary Panetta has served on numerous boards and commissions. He co-chaired California Forward, the Joint Ocean Commission Initiative and Governor Schwarzenegger’s Council on Base Support and Retention.  In 2006, he served on the Iraq Study Group, a bipartisan national commission seeking a new course for the war in Iraq.  Presently, Secretary Panetta serves on the boards of directors for Oracle, Blue Shield of California as well as the Commission on Presidential Debates.  In addition, he is an advisor to FleishmanHillard. February 27, 2013, after serving as the 23rd Secretary of Defense.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Gen. Michael Hayden">
-                    <img src="images/_hayden_p4.jpg" alt="Gen. Michael Hayden" />
-                    <h5><strong>Gen. Michael Hayden</strong> | Panelist</h5>
-                    <h6>Former director, NSA, CIA</h6>
-                    <p>General Michael Hayden is a Principal at The Chertoff Group, a premier global advisory firm that focuses exclusively on the security and risk management sector by providing consulting, mergers and acquisitions (M&A), and risk management services to clients seeking to secure and grow their enterprises.  At The Chertoff Group, General Hayden uses his broad geographic and political knowledge to brief clients on intelligence matters worldwide – including any developments in cybersecurity that may affect their businesses.  General Hayden served as the Director of the CIA from 2006 to 2009, where he was responsible for overseeing all information concerning the plans, intentions and capabilities of America’s adversaries, producing timely analysis for decision makers, and conducting covert operations to thwart terrorists and other enemies of the US. Prior to his role at the CIA, General Hayden was the country’s first Principal Deputy Director of National Intelligence and was the highest ranking intelligence office in the armed forces. Additionally, he served as Commander of the Air Intelligence Agency, Director of the Joint Command and Control Warfare Center, Director of the National Security Agency and Chief of the Central Security Service.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Steve Coll">
-                    <img src="images/_coll_p4.jpg" alt="Steve Coll" />
-                    <h5><strong>Steve Coll</strong> | Moderator</h5>
-                    <h6>Dean of Columbia Journalism School</h6>
-                    <p>Dean Steve Coll is a staff writer at The New Yorker, the author of seven books of nonfiction, and a two-time winner of the Pulitzer Prize. Between 1985 and 2005, he was a reporter, foreign correspondent and senior editor at the Washington Post. There he covered Wall Street, served as the paper’s South Asia correspondent, and was the Post’s first international investigative correspondent, based in London. Over the years, he won the Gerald R. Loeb Award for his business coverage; the Livingston Award for his work from India and Pakistan; and the Robert F. Kennedy Award for his coverage of the civil war in Sierra Leone. He served as managing editor of the Post between 1998 and 2004. The following year, he joined The New Yorker, where he has written on international politics, American politics and national security, intelligence controversies and the media.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-              </div>
-              <!-- end dropText -->
-          </div>
-          <!-- end dropItem -->
-
-          <div class="dropItem">
-              <h4 class="dropHed"><i class="fa fa-plus-circle"></i> The Politics of Polarization: Can Democracy Survive?</h4>
-              <div class="dropText clearFix">
-                <p>Are American politics today more polarized than ever before? Why is that? Or if not, why does it seem so? Is this good or bad? Is our democracy eroding in the face of demographic fracturing, increased class warfare and exacerbating fear and distrust? What can/should our leaders do about it? What can we do about it?</p>
-
-                <h6>Speakers</h6>
-                <ul class="speakerList">
-                  <li class="activeMug"><img src="images/_stephens_p5.jpg" alt="Bret Stephens" /></li>
-                  <li><img src="images/_mccarty_p5.jpg" alt="Nolan McCarty" /></li>
-                  <li><img src="images/_mccurry_p5.jpg" alt="Mike McCurry" /></li>
-                  <li><img src="images/_navarro_p5.jpg" alt="Ana Navarro" /></li>
-                  <li><img src="images/_allen_p5.jpg" alt="Danielle Allen" /></li>
-                </ul>
-
-                <div class="speakerBlock clearFix" data-name="Bret Stephens">
-                    <img src="images/_stephens_p5.jpg" alt="Bret Stephens" />
-                    <h5><strong>Bret Stephens</strong> | Panelist</h5>
-                    <h6>Deputy editorial page editor and columnist,<em>The Wall Street Journal</em></h6>
-                    <p>Bret Stephens writes "Global View," the Wall Street Journal's principal column on foreign affairs, for which he won the 2013 Pulitzer Prize for commentary. He is the paper's deputy editorial page editor, responsible for its global opinion pages, and a member of the editorial board. Previously, he was editor­in­chief of The Jerusalem Post. His book, "America in Retreat: The New Isolationism and the Coming Global Disorder" was recently reissued in paperback by Sentinel Books. He lives in New York City with his wife Corinna, a classical music critic for the New York Times, and their three children.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Nolan McCarty">
-                    <img src="images/_mccarty_p5.jpg" alt="Nolan McCarty" />
-                    <h5><strong>Nolan McCarty</strong> | Panelist</h5>
-                    <h6>Chair, Department of Politics, Princeton University</h6>
-                    <p>Nolan McCarty is the Susan Dod Brown Professor of Politics and Public Affairs and Chair of the Department of Politics. He was formerly the associate dean at the Woodrow Wilson School of Public and International Affairs. His research interests include U.S. politics, democratic political institutions, and political game theory. He is the recipient of the Robert Eckles Swain National Fellowship from the Hoover Institution and the John M. Olin Fellowship in Political Economy. He has co­authored three books: Political Game Theory (2006, Cambridge University Press with Adam Meirowitz), Polarized America: The Dance of Ideology and Unequal Riches (2006, MIT Press with Keith Poole and Howard Rosenthal) and Political Bubbles: Financial Crises and the Failure of American Democracy (with Keith Poole and Howard Rosenthal). In 2010, he was elected a fellow of the American Academy of Arts and Sciences. He earned his A.B. from the University of Chicago and his PhD from Carnegie Mellon University.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Mike McCurry">
-                    <img src="images/_mccurry_p5.jpg" alt="Mike McCurry" />
-                    <h5><strong>Mike McCurry</strong> | Panelist</h5>
-                    <h6>Former White House press secretary</h6>
-                    <p>Mike McCurry is a Distinguished Professor of Public Theology at the Wesley Theological Seminary in Washington, DC and a partner at Public Strategies Washington, Inc., where he provides counsel on communi-cations strategies and management to corporate and non-profit clients. McCurry is a veteran political strategist and spokesperson with nearly four decades of experience in the nation’s capital. McCurry served in the White House as press secretary to President Bill Clinton (1995-1998). He also served as spokesman for the U.S. Department of State (1993-1995) and director of communications for the Democratic National Committee (1988-1990). McCurry held a variety of leadership roles in national campaigns for the Democratic ticket from 1984 to 2004.</p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Ana Navarro">
-                    <img src="images/_navarro_p5.jpg" alt="Ana Navarro" />
-                    <h5><strong>Ana Navarro</strong> | Panelist</h5>
-                    <h6>CNN conservative commentator</h6>
-                    <p></p>
-                </div>
-                <!-- end speakerBlock -->
-
-                <div class="speakerBlock clearFix hidden" data-name="Danielle Allen">
-                    <img src="images/_allen_p5.jpg" alt="Danielle Allen" />
-                    <h5><strong>Danielle Allen</strong> | Moderator</h5>
-                    <h6>Political scientist/director of Harvard’s Edmon J. Safra Center for Ethics</h6>
-                    <p>Danielle Allen is Director of the Edmond J. Safra Center for Ethics at Harvard University and professor in Harvard’s Department of Government and Graduate School of Education. She is a political theorist who has published broadly in democratic theory, political sociology, and the history of political thought. Widely known for her work on justice and citizenship in both ancient Athens and modern America, Allen is the author of The World of Prometheus: The Politics of Punishing in Democratic Athens (2000), Talking to Strangers: Anxieties of Citizenship since Brown vs. the Board of Education (2004), Why Plato Wrote (2010), and Our Declaration: A Reading of the Declaration of Independence in Defense of Equality (Norton/Liveright Books, June 2014). She is the co­editor of the award­winning Education, Justice, and Democracy (2013, with Rob Reich) and From Voice to Influence: Understanding Citizenship in the Digital Age (2015, with Jennifer Light). She is a Chair of the Mellon Foundation Board, past Chair of the Pulitzer Prize Board, and a member of the American Academy of Arts and Sciences and American Philosophical Society.</p>
-                </div>
-                <!-- end speakerBlock -->
-              </div>
-              <!-- end dropText -->
-          </div>
-          <!-- end dropItem -->
+        <div class="leftWell">
+            <div class="dmnAwards">
+                <h5>Pulitzer Prizes awarded to <br><em>The Dallas Morning News</em> </h5>
+                <h6><a href="http://www.pulitzer.org/winners/7123">2010: Editorial Writing</a></h6>
+                <h6><a href="http://www.pulitzer.org/winners/7019">2006: Breaking News Photography</a></h6>
+                <h6><a href="http://www.pulitzer.org/winners/6977">2004: Breaking News Photography</a></h6>
+                <h6><a href="http://www.pulitzer.org/winners/6778">1994: International Reporting</a></h6>
+                <h6><a href="http://www.pulitzer.org/winners/6764">1993: Spot News Photography</a></h6>
+                <h6><a href="http://www.pulitzer.org/winners/6738">1992: Investigative Reporting</a></h6>
+                <h6><a href="http://www.pulitzer.org/winners/6711">1991: Feature Photography</a></h6>
+                <h6><a href="http://www.pulitzer.org/winners/6664">1989: Explanatory Journalism</a></h6>
+                <h6><a href="http://www.pulitzer.org/winners/6607">1986: National Reporting</a></h6>
+            </div>
+            <!-- end dmnAwards -->
         </div>
-        <!-- end dropList -->
-      </div>
-      <!-- end rightWell -->
-
-  </div>
-  <!-- end schedule -->
-
-
-	
-  <div id="dmnPulitzers" class="clearFix pulModule">
-
-  	<h3>THE DALLAS MORNING NEWS PULITZER PRIZES</h3>
-
-  	<div class="rightWell">
-  		<div class="dmnSlideshow">empty slideshow</div>
-  	</div>
-  	<div class="leftWell">
-  		<div class="dmnAwards">
-  	  		<h5>Pulitzer Prizes awarded to <br><em>The Dallas Morning News</em> </h5>
-  	  		<h6><a href="http://www.pulitzer.org/winners/6607">1986: National Reporting</a></h6>
-  	  		<h6><a href="http://www.pulitzer.org/winners/6664">1989: Explanatory Journalism</a></h6>
-  	  		<h6><a href="http://www.pulitzer.org/winners/6711">1991: Feature Photography</a></h6>
-  	  		<h6><a href="http://www.pulitzer.org/winners/6738">1992: Investigative Reporting</a></h6>
-  	  		<h6><a href="http://www.pulitzer.org/winners/6764">1993: Spot News Photography</a></h6>
-  	  		<h6><a href="http://www.pulitzer.org/winners/6778">1994: International Reporting</a></h6>
-  	  		<h6><a href="http://www.pulitzer.org/winners/6977">2004: Breaking News Photography</a></h6>
-  	  		<h6><a href="http://www.pulitzer.org/winners/7019">2006: Breaking News Photography</a></h6>
-  	  		<h6><a href="http://www.pulitzer.org/winners/7123">2010: Editorial Writing</a></h6>
-  	  	</div> <!-- end dmnAwards -->
-  	 </div>
-  </div>
-
-		<div class="shareComments shareCommentsTop">
-		<ul id="share-bar1" class="width-auto-hack"></ul>
-	</div>
-	
-	<!-- end shareComments -->
-
-
-	<!-- end more -->
-
-		<div class="shareComments">
-		<ul id="share-bar2" class="width-auto-hack"></ul>
+    </div>
+    <div class="shareComments shareCommentsTop">
+        <ul id="share-bar1" class="width-auto-hack"></ul>
+    </div>
+    <!-- end shareComments -->
+    <!-- end more -->
+    <div class="shareComments">
+        <ul id="share-bar2" class="width-auto-hack"></ul>
         <div id="comments"></div>
-	</div>
-	<!-- end shareComments -->
-
+    </div>
+    <!-- end shareComments -->
 </section>
 <!-- end contentWell -->
-{%endblock%}
-
-
-
-
-{%block custom_foot%}
-	<script type="text/javascript" src="js/scripts-bundle.js"></script>
-{%endblock%}
-
-
-
-
-
-{%block custom_social_meta%}
+{%endblock%} {%block custom_foot%}
+<script type="text/javascript" src="js/scripts-bundle.js"></script>
+{%endblock%} {%block custom_social_meta%}
 <script type="text/javascript">
 var storyTitle = "{{title}}",
-	storyURL = "{{url}}",
-	leadText = "{{description}}",
-	storyIMG = "{{imgURL}}",
-	storyAuthor = "{{authors}}",
-	twitterTag = "{{twitter}}",
-	comments = true,
-	share = true;
-	OAS_sitepage = 'www.dallasnews.com/{{desk}}/{{section}}/';
+    storyURL = "{{url}}",
+    leadText = "{{description}}",
+    storyIMG = "{{imgURL}}",
+    storyAuthor = "{{authors}}",
+    twitterTag = "{{twitter}}",
+    comments = true,
+    share = true;
+OAS_sitepage = 'www.dallasnews.com/{{desk}}/{{section}}/';
 </script>
 {%endblock%}

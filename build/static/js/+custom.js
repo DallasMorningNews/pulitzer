@@ -30,6 +30,31 @@ $(document).ready(function() {
 	});
 
 
+	// AUTOPLAY SLIDESHOW
+
+	$("#slideContainer > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideContainer > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(2000)
+    .end()
+    .appendTo('#slideContainer');
+},  4000);
+
+var imageHeight = $(".dmnSlide").height();
+
+$("#slideContainer").css("height",(imageHeight + 20 + "px"));
+
+$(window).resize(function(){
+	setTimeout(function(){
+		imageHeight = $(".dmnSlide").height();
+
+		$("#slideContainer").css("height",(imageHeight + 20 + "px"));
+	}, 250);
+});
+
 	// function rotateBios() {
 	// 	var activeList = $(".expandedText").children(".speakerList");
 	// 	var listLength = activeList.children('li').length;
