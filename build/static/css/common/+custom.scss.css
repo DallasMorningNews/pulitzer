@@ -86,10 +86,6 @@ header {
     -moz-transition: all 0.5s ease-out;
     -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out; }
-  header.initialPos {
-    padding-top: 200px; }
-    header.initialPos img {
-      top: 23px; }
 
 @media (max-width: 800px) {
   header {
@@ -188,7 +184,17 @@ header {
   text-indent: -14px; }
 
 .dropList .dropItem {
-  margin-bottom: 3.6rem; }
+  border-bottom: 1px solid #ebebeb;
+  padding: 0 0 2.4rem;
+  margin: 0 0 2.4rem; }
+  .dropList .dropItem:first-of-type {
+    padding-top: 0;
+    margin-top: 0;
+    border-top: 0; }
+  .dropList .dropItem:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0; }
 
 .dropList .dropHed .fa {
   font-size: 2rem;
@@ -200,23 +206,17 @@ header {
 
 .dropList .dropText {
   display: none;
-  padding: 1rem 0rem 0rem 0rem; }
+  padding: 1rem 0 1.2rem 0; }
 
 .dropList .expandedText {
   display: block; }
-
-.dropList .dropText {
-  padding-bottom: 4.8rem; }
-
-.expandedText {
-  border-bottom: 1px solid #ebebeb; }
 
 .dropList h6 {
   margin: 2.4rem 0 2.4rem;
   text-transform: uppercase; }
 
 .speakerList {
-  margin-bottom: 2.4rem;
+  margin-bottom: 0rem;
   float: left;
   width: 65px;
   border-right: 1px solid #797979; }
@@ -270,7 +270,8 @@ header {
     display: inline-block;
     border-right: none;
     border-bottom: 1px solid #797979;
-    float: none; }
+    float: none;
+    margin-bottom: 2.4rem; }
     .speakerList li {
       display: inline-block; }
       .speakerList li.activeMug:after {
@@ -290,7 +291,7 @@ header {
 
 @media (max-width: 800px) {
   .speakerList {
-    margin-bottom: 2.4rem;
+    margin-bottom: 0;
     float: left;
     width: 65px;
     border-right: 1px solid #797979;

@@ -335,9 +335,3 @@ $(window).resize(function(){
 
 
 });
-
-$(window).load(function() {
-	setTimeout(function() {
-		$("header").removeClass("initialPos");
-	}, 500);
-});
