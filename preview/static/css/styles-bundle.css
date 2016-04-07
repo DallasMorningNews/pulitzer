@@ -213,7 +213,7 @@ a:visited {
   color: #797979; }
 
 #content {
-  padding: 0rem 0 5rem;
+  padding: 0 0;
   position: relative; }
 
 h1, h2, h3, h4 {
@@ -853,6 +853,77 @@ a {
 .hidden {
   display: none; }
 
+#pulNav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0f1925;
+  z-index: 1000;
+  padding: 20px; }
+  #pulNav img {
+    width: 150px;
+    float: left; }
+  #pulNav ul {
+    width: calc(100% - 170px);
+    float: right;
+    text-align: right;
+    color: white;
+    margin-top: 5px; }
+  #pulNav li {
+    display: inline;
+    margin-right: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    -webkit-transtion: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out; }
+    #pulNav li:hover {
+      color: #bfa959;
+      border-bottom: 3px solid #bfa959; }
+    #pulNav li:last-of-type {
+      margin-right: 0; }
+  #pulNav .menu {
+    color: white;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    float: right;
+    font-weight: bold;
+    display: none; }
+  @media (max-width: 750px) {
+    #pulNav .menu {
+      display: block;
+      margin-top: 3px; }
+    #pulNav ul {
+      height: calc(100vh - 55px);
+      padding: 20px;
+      background-color: #212121;
+      position: fixed;
+      top: 55px;
+      width: 250px;
+      right: -250px;
+      text-align: left;
+      -webkit-transtion: all 0.15s ease-out;
+      -moz-transition: all 0.15s ease-out;
+      -o-transition: all 0.15s ease-out;
+      transition: all 0.15s ease-out; }
+      #pulNav ul.displayNav {
+        right: 0; }
+    #pulNav li {
+      display: block;
+      padding: 20px 0;
+      width: 100%;
+      border-bottom: 1px solid #bfa959; }
+      #pulNav li:last-of-type {
+        border-bottom: none; } }
+
 header {
   background-color: #0f1925;
   margin-top: 50vw;
@@ -903,7 +974,7 @@ header {
     margin-bottom: 2.4rem; }
   header a {
     color: white; }
-  header img {
+  header .logo100 {
     width: 150px;
     position: absolute;
     top: -73px;
@@ -935,7 +1006,7 @@ header {
       font-size: 1.6rem;
       line-height: 2.4rem;
       margin-bottom: 0; }
-    header img {
+    header .logo100 {
       width: 80px;
       margin-left: -40px;
       top: -39px; } }
@@ -954,6 +1025,8 @@ header {
   border-bottom: 1px solid #ebebeb;
   font-family: "Lato", Arial, sans-serif;
   position: relative; }
+  .pulModule:last-of-type {
+    border-bottom: none; }
   .pulModule iframe {
     margin-bottom: 1.2rem; }
   .pulModule h3 {
@@ -1015,7 +1088,7 @@ header {
     padding: 0 0; }
   .leftWell {
     margin-bottom: 4.8rem;
-    border-right: 1px solid #797979; } }
+    border-right: none; } }
 
 #video p {
   text-align: center; }
@@ -1215,7 +1288,8 @@ header {
     width: auto;
     display: inline-block;
     border-bottom: 1px solid #797979;
-    border-right: none; }
+    border-right: none;
+    margin-bottom: 2.4rem; }
     .speakerList li.activeMug:after {
       border-top: none;
       border-left: none;
@@ -1254,9 +1328,70 @@ header {
 .dmnAwards a:before {
   content: "";
   display: block;
-  background: url("/images/_pulitzer_bullet.jpg");
+  background: url("../images/_pulitzer_bullet.jpg");
   background-size: contain;
   width: 20px;
   height: 20px;
   float: left;
   margin: 0 6px 0 0; }
+
+.pulFooter {
+  min-height: 70px;
+  background-color: #0f1925;
+  padding: 20px 20px; }
+
+.logos {
+  width: 75%;
+  float: left;
+  margin-top: 5px; }
+  .logos img {
+    float: left; }
+  .logos .pulitzerLogo {
+    width: 150px; }
+  .logos .dmnLogo {
+    width: 185px;
+    margin: 2px 0 0 20px; }
+  @media (max-width: 525px) {
+    .logos img {
+      float: none;
+      display: block; }
+    .logos .pulitzerLogo {
+      margin: 0 0 10px 0; }
+    .logos .dmnLogo {
+      margin: 0 0; } }
+  @media (max-width: 400px) {
+    .logos .pulitzerLogo, .logos .dmnLogo {
+      width: 125px; } }
+
+.social {
+  width: 70px; }
+  .social button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    padding: 0 0;
+    background-color: white;
+    -webkit-transtion: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+    -o-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out;
+    cursor: pointer;
+    float: left; }
+    .social button:first-of-type {
+      margin-right: 10px; }
+    .social button:hover {
+      background-color: #bfa959; }
+    .social button:focus {
+      outline: none; }
+    .social button img {
+      margin: 0 auto;
+      width: 30px;
+      height: 30px;
+      display: inline-block; }
+
+.headerSocial {
+  margin: 2.4rem auto 0; }
+
+.footerSocial {
+  float: right; }

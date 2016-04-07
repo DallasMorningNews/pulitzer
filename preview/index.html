@@ -4,15 +4,15 @@
 
 	<!-- Add Custom Meta Data -->
 	
-<meta content="interactives,dallas,dallas news,dfw news,dallas newspaper,dallas morning news,dallas morning news newspaper," name="keywords" />
+<meta content="interactives,dallas,dallas news,dfw news,dallas newspaper,dallas morning news,dallas morning news newspaper,the pulitzer prize,pulitzer,pulitzer centennial celebration,the people, the presidency and the press,george bush presidential center,lbj presidental library,george w. bush presidential center" name="keywords" />
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta content="test" name="description" />
-<title>test</title>
+<meta content="Presented by The Dallas Morning News in collaboration with the George Bush Presidential Center, LBJ Presidential Library, and host, the George W. Bush Presidential Center" name="description" />
+<title>The People, the Presidency and the Press: 100 years of the Pulitzer Prize</title>
 <meta property="og:url" content="http://interactives.dallasnews.com/2016/pulitzer/" />
-<meta property="og:title" content="test" />
-<meta property="og:description" content="test" name="description" />
+<meta property="og:title" content="The People, the Presidency and the Press: 100 years of the Pulitzer Prize" />
+<meta property="og:description" content="Presented by The Dallas Morning News in collaboration with the George Bush Presidential Center, LBJ Presidential Library, and host, the George W. Bush Presidential Center" name="description" />
 <meta property="og:image" content="http://interactives.dallasnews.com/2016/pulitzer/images/_share.jpg" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:width" content="1200" />
@@ -21,9 +21,9 @@
 <meta name="twitter:site" content="dallasnews" />
 <meta name="twitter:creator" content="" />
 <meta name="liveFyreID" content="66738610180" />
-<meta name='parsely-page' id='parsely-page' content='{"title": "test", "link": "http://interactives.dallasnews.com/2016/pulitzer/", "image_url": "http://interactives.dallasnews.com/2016/pulitzer/images/_share.jpg", "type": "post", "post_id": "66738610180", "pub_date": "2016-2-24T00:00:00Z", "section": "", "author": ["staff"], "tags": ["interactives "," dallas "," dallas news "," dfw news "," dallas newspaper "," dallas morning news "," dallas morning news newspaper "," "]}'/>
-<meta property="og:keywords" content="interactives,dallas,dallas news,dfw news,dallas newspaper,dallas morning news,dallas morning news newspaper," />
-<meta name='news_keywords' content="interactives,dallas,dallas news,dfw news,dallas newspaper,dallas morning news,dallas morning news newspaper," /> 
+<meta name='parsely-page' id='parsely-page' content='{"title": "The People, the Presidency and the Press: 100 years of the Pulitzer Prize", "link": "http://interactives.dallasnews.com/2016/pulitzer/", "image_url": "http://interactives.dallasnews.com/2016/pulitzer/images/_share.jpg", "type": "post", "post_id": "66738610180", "pub_date": "2016-2-24T00:00:00Z", "section": "", "author": ["staff"], "tags": ["interactives "," dallas "," dallas news "," dfw news "," dallas newspaper "," dallas morning news "," dallas morning news newspaper "," the pulitzer prize "," pulitzer "," pulitzer centennial celebration "," the people, the presidency and the press "," george bush presidential center "," lbj presidental library "," george w. bush presidential center"]}'/>
+<meta property="og:keywords" content="interactives,dallas,dallas news,dfw news,dallas newspaper,dallas morning news,dallas morning news newspaper,the pulitzer prize,pulitzer,pulitzer centennial celebration,the people, the presidency and the press,george bush presidential center,lbj presidental library,george w. bush presidential center" />
+<meta name='news_keywords' content="interactives,dallas,dallas news,dfw news,dallas newspaper,dallas morning news,dallas morning news newspaper,the pulitzer prize,pulitzer,pulitzer centennial celebration,the people, the presidency and the press,george bush presidential center,lbj presidental library,george w. bush presidential center" /> 
 	<!-- End Custom Meta Data -->
 
 	<meta property="fb:app_id" content="258290334265148"/>
@@ -60,6 +60,8 @@
 	-->
 	
 <script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+
+<!--
 <script type="text/javascript">
 DFP_networkId = "11222444";
 var DFPSlotSizes = [];
@@ -106,6 +108,8 @@ googletag.pubads().enableSingleRequest();
 googletag.pubads().enableSyncRendering();
 googletag.enableServices();
 </script>
+-->
+
 
 	<!--
 	================================
@@ -118,6 +122,27 @@ googletag.enableServices();
 
 	<script type="text/javascript" src="http://res.dallasnews.com/resources/cobrand/js/blogs/parselyDynamicTracking.js"></script>
 
+	<script>
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: '258290334265148',
+				xfbml: true,
+				version: 'v2.3'
+			});
+		};
+
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
 	<!--
 	<header class="bg-black">
 		<a class="logo" href="http://www.dallasnews.com" id="top"><span class="sr-only">The Dallas Morning News</span></a>
@@ -128,16 +153,44 @@ googletag.enableServices();
 	<article id="content">
 
 	
+<nav id="pulNav" class="clearFix">
+  <img src="images/_pulLogo.png" alt="The Pulitzer Prize logo" />
+  <span class="menu"><i class="fa fa-bars"></i> Menu</span>
+
+  <ul>
+    <li data-link="#livestream">Live Coverage</li>
+    <li data-link="#schedule">Schedule and Panels</li>
+    <li data-link="#video">100 years of Excellence</li>
+    <li data-link="#dmnPulitzers">DMN Pulitzers</li>
+  </ul>
+</nav>
 <section id="contentHeader"></section>
 <!-- end contentHeader -->
-<header class="initialPos">
-    <img src="images/_logo100.png" alt="100 logo" />
+<header>
+    <img class="logo100" src="images/_logo100.png" alt="100 logo" />
     <h6><a href="http://www.pulitzer.org/centennial">The Pulitzer Prizes’ Centennial Celebration</a></h6>
     <h4>June 2-3, 2016</h4>
     <h1>The People, the Presidency and the Press</h1>
     <h5><em>Presented by The Dallas Morning News in collaboration with the George Bush Presidential Center, LBJ Presidential Library, and host, the George W. Bush Presidential Center</em></h5>
+    <div class="headerSocial social">
+      <button><img class="facebook" src="images/facebookLogo.svg" alt="Click to share on Facebook" /></button>
+      <button><img class="twitter" src="images/twitterLogo.svg" alt="Click to tweet on Twitter" /></button>
+    </div>
+
 </header>
 <section class="contentWell clearFix">
+
+    <div id="livestream" class="clearFix pulModule">
+      <h3>Live event coverage</h3>
+      <div class="videoBlock">
+        <div class="videoWrapper">
+              <iframe width="1280" height="720" src="http://www.youtube.com/embed/qBSoqbvpYBc" frameborder="0" allowfullscreen></iframe>
+              <!-- change out iframe code with your youtube video -->
+        </div>
+      </div>
+      <!-- end you tube video -->
+
+    </div>
     <div id="schedule" class="clearFix pulModule">
         <h3>Schedule and Panels</h3>
         <div class="leftWell">
@@ -523,40 +576,45 @@ googletag.enableServices();
             <!-- end dmnAwards -->
         </div>
     </div>
-    <div class="shareComments shareCommentsTop">
-        <ul id="share-bar1" class="width-auto-hack"></ul>
-    </div>
-    <!-- end shareComments -->
-    <!-- end more -->
-    <div class="shareComments">
-        <ul id="share-bar2" class="width-auto-hack"></ul>
-        <div id="comments"></div>
-    </div>
-    <!-- end shareComments -->
+
 </section>
 <!-- end contentWell -->
+
+<footer class="pulFooter clearFix">
+  <div class="logos clearFix">
+    <img class="pulitzerLogo" src="images/_pulLogo.png" alt="The Pulitzer Prize logo" />
+    <img class="dmnLogo" src="images/_tdmnLogo.png" alt="The Dallas Morning News logo" />
+  </div>
+
+  <div class="footerSocial social">
+    <button><img class="facebook" src="images/facebookLogo.svg" alt="Click to share on Facebook" /></button>
+    <button><img class="twitter" src="images/twitterLogo.svg" alt="Click to tweet on Twitter" /></button>
+  </div>
+
+</footer>
+
+<script type="text/javascript" src="js/scripts-bundle.js"></script>
 
 
 	</article>
 
 
 	
-<script type="text/javascript" src="js/scripts-bundle.js"></script>
-
+	
 
 
 
 	
 <script type="text/javascript">
-var storyTitle = "test",
+var storyTitle = "The People, the Presidency and the Press: 100 years of the Pulitzer Prize",
     storyURL = "http://interactives.dallasnews.com/2016/pulitzer/",
-    leadText = "test",
+    leadText = "Presented by The Dallas Morning News in collaboration with the George Bush Presidential Center, LBJ Presidential Library, and host, the George W. Bush Presidential Center",
     storyIMG = "http://interactives.dallasnews.com/2016/pulitzer/images/_share.jpg",
     storyAuthor = "staff",
     twitterTag = "dallasnews",
     comments = true,
     share = true;
-OAS_sitepage = 'www.dallasnews.com/news//';
+OAS_sitepage = 'www.dallasnews.com/opinion//';
 </script>
 
 

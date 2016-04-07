@@ -20,6 +20,8 @@
 <meta property="og:keywords" content="{{keywords|join(',')}}" />
 <meta name='news_keywords' content="{{keywords|join(',')}}" /> {%endblock%} {%block custom_head%} {%endblock%} {%block ad%}
 <script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+
+<!--
 <script type="text/javascript">
 DFP_networkId = "11222444";
 var DFPSlotSizes = [];
@@ -66,17 +68,47 @@ googletag.pubads().enableSingleRequest();
 googletag.pubads().enableSyncRendering();
 googletag.enableServices();
 </script>
+-->
+
 {%endblock%} {%block content%}
+<nav id="pulNav" class="clearFix">
+  <img src="images/_pulLogo.png" alt="The Pulitzer Prize logo" />
+  <span class="menu"><i class="fa fa-bars"></i> Menu</span>
+
+  <ul>
+    <li data-link="#livestream">Live Coverage</li>
+    <li data-link="#schedule">Schedule and Panels</li>
+    <li data-link="#video">100 years of Excellence</li>
+    <li data-link="#dmnPulitzers">DMN Pulitzers</li>
+  </ul>
+</nav>
 <section id="contentHeader"></section>
 <!-- end contentHeader -->
-<header class="initialPos">
-    <img src="images/_logo100.png" alt="100 logo" />
+<header>
+    <img class="logo100" src="images/_logo100.png" alt="100 logo" />
     <h6><a href="http://www.pulitzer.org/centennial">The Pulitzer Prizes’ Centennial Celebration</a></h6>
     <h4>June 2-3, 2016</h4>
     <h1>The People, the Presidency and the Press</h1>
     <h5><em>Presented by The Dallas Morning News in collaboration with the George Bush Presidential Center, LBJ Presidential Library, and host, the George W. Bush Presidential Center</em></h5>
+    <div class="headerSocial social">
+      <button><img class="facebook" src="images/facebookLogo.svg" alt="Click to share on Facebook" /></button>
+      <button><img class="twitter" src="images/twitterLogo.svg" alt="Click to tweet on Twitter" /></button>
+    </div>
+
 </header>
 <section class="contentWell clearFix">
+
+    <div id="livestream" class="clearFix pulModule">
+      <h3>Live event coverage</h3>
+      <div class="videoBlock">
+        <div class="videoWrapper">
+              <iframe width="1280" height="720" src="http://www.youtube.com/embed/qBSoqbvpYBc" frameborder="0" allowfullscreen></iframe>
+              <!-- change out iframe code with your youtube video -->
+        </div>
+      </div>
+      <!-- end you tube video -->
+
+    </div>
     <div id="schedule" class="clearFix pulModule">
         <h3>Schedule and Panels</h3>
         <div class="leftWell">
@@ -462,19 +494,23 @@ googletag.enableServices();
             <!-- end dmnAwards -->
         </div>
     </div>
-    <div class="shareComments shareCommentsTop">
-        <ul id="share-bar1" class="width-auto-hack"></ul>
-    </div>
-    <!-- end shareComments -->
-    <!-- end more -->
-    <div class="shareComments">
-        <ul id="share-bar2" class="width-auto-hack"></ul>
-        <div id="comments"></div>
-    </div>
-    <!-- end shareComments -->
+
 </section>
 <!-- end contentWell -->
-{%endblock%} {%block custom_foot%}
+
+<footer class="pulFooter clearFix">
+  <div class="logos clearFix">
+    <img class="pulitzerLogo" src="images/_pulLogo.png" alt="The Pulitzer Prize logo" />
+    <img class="dmnLogo" src="images/_tdmnLogo.png" alt="The Dallas Morning News logo" />
+  </div>
+
+  <div class="footerSocial social">
+    <button><img class="facebook" src="images/facebookLogo.svg" alt="Click to share on Facebook" /></button>
+    <button><img class="twitter" src="images/twitterLogo.svg" alt="Click to tweet on Twitter" /></button>
+  </div>
+
+</footer>
+
 <script type="text/javascript" src="js/scripts-bundle.js"></script>
 {%endblock%} {%block custom_social_meta%}
 <script type="text/javascript">

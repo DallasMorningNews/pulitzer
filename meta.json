@@ -1,13 +1,13 @@
 {
   "name": "pulitzer",
-  "title": "test",
+  "title": "The People, the Presidency and the Press: 100 years of the Pulitzer Prize",
   "publishYear": 2016,
   "publishDate": "2016-2-24T00:00:00Z",
-  "description": "test",
+  "description": "Presented by The Dallas Morning News in collaboration with the George Bush Presidential Center, LBJ Presidential Library, and host, the George W. Bush Presidential Center",
   "url": "http://interactives.dallasnews.com/2016/pulitzer/",
   "id": "66738610180",
   "authors": "staff",
-  "desk": "news",
+  "desk": "opinion",
   "section": "",
   "keywords": [
     "interactives",
@@ -17,7 +17,13 @@
     "dallas newspaper",
     "dallas morning news",
     "dallas morning news newspaper",
-    ""
+    "the pulitzer prize",
+    "pulitzer",
+    "pulitzer centennial celebration",
+    "the people, the presidency and the press",
+    "george bush presidential center",
+    "lbj presidental library",
+    "george w. bush presidential center"
   ],
   "imgURL": "http://interactives.dallasnews.com/2016/pulitzer/images/_share.jpg",
   "imgWidth": "1200",
