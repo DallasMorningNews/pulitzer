@@ -90,6 +90,20 @@ a {
   display: none;
 }
 
+.contentWell .clearGraph {
+  clear:both;
+  padding-top: 2.4rem;
+  @include type(2.4rem, 3rem, 0);
+  text-align: center;
+  a {
+    color: $dmnblue;
+    font-weight: bold;
+    &:visited {
+      color: $dmnblue;
+    }
+  }
+}
+
 
 /////////////////////////////////////////
 /// NAV /////////////////////////////////

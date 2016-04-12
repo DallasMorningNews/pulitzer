@@ -853,6 +853,19 @@ a {
 .hidden {
   display: none; }
 
+.contentWell .clearGraph {
+  clear: both;
+  padding-top: 2.4rem;
+  font-size: 2.4rem;
+  line-height: 3rem;
+  margin-bottom: 0;
+  text-align: center; }
+  .contentWell .clearGraph a {
+    color: #0185d3;
+    font-weight: bold; }
+    .contentWell .clearGraph a:visited {
+      color: #0185d3; }
+
 #pulNav {
   width: 100%;
   position: fixed;
