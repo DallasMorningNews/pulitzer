@@ -39,12 +39,10 @@ a {
   display: none; }
 
 .contentWell .clearGraph {
-  clear: both;
-  padding-top: 2.4rem;
-  font-size: 2.4rem;
-  line-height: 3rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   margin-bottom: 0;
-  text-align: center; }
+  margin-top: 2.4rem; }
   .contentWell .clearGraph a {
     color: #0185d3;
     font-weight: bold; }
@@ -261,6 +259,9 @@ header {
 
 .skedBlock {
   margin: 0 0 2.4rem; }
+  .skedBlock h6 {
+    font-weight: bold;
+    margin-bottom: 1.2rem; }
 
 @media (max-width: 950px) {
   .leftWell {

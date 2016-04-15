@@ -91,10 +91,8 @@ a {
 }
 
 .contentWell .clearGraph {
-  clear:both;
-  padding-top: 2.4rem;
-  @include type(2.4rem, 3rem, 0);
-  text-align: center;
+  @include type(1.6rem, 2.4rem, 0);
+  margin-top: 2.4rem;
   a {
     color: $dmnblue;
     font-weight: bold;
@@ -336,6 +334,10 @@ header {
 
 .skedBlock {
   margin: 0 0 2.4rem;
+  h6 {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+  }
 }
 
 @media(max-width: 950px) {
