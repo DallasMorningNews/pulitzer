@@ -639,6 +639,19 @@ header {
 	margin: 0 6px 0 0;
 }
 
+#relatedContent {
+  margin-top: 1.2rem;
+  h5 {
+    margin-bottom: 1.2rem;
+  }
+  a {
+    color: $dmnblue;
+    font-family: $sans;
+    display: inline-block;
+    @include type(1.4rem, 1.8rem, .3rem);
+  }
+}
+
 /////////////////////////////////////////
 /// PUL FOOTER //////////////////////////
 /////////////////////////////////////////
@@ -719,8 +732,3 @@ header {
 .footerSocial {
   float: right;
 }
-
-
-/////////////////////////////////////////
-/// FOOTER SOCIAL ///////////////////////
-/////////////////////////////////////////

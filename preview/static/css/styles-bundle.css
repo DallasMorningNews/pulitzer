@@ -1349,6 +1349,18 @@ header {
   float: left;
   margin: 0 6px 0 0; }
 
+#relatedContent {
+  margin-top: 1.2rem; }
+  #relatedContent h5 {
+    margin-bottom: 1.2rem; }
+  #relatedContent a {
+    color: #0185d3;
+    font-family: "Lato", Arial, sans-serif;
+    display: inline-block;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-bottom: 0.3rem; }
+
 .pulFooter {
   min-height: 70px;
   background-color: #0f1925;
