@@ -606,3 +606,9 @@ header {
 
 .footerSocial {
   float: right; }
+
+.standard {
+  font-size: 1.6rem;
+  color: #0185d3; }
+  .standard:visited {
+    color: #0185d3; }

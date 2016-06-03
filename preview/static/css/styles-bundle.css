@@ -524,7 +524,7 @@ XI. YOUTUBE EMBEDS
 */
 .videoBlock {
   width: 100%;
-  margin: 0 auto 1.2rem; }
+  margin: 0 auto 2.4rem; }
 
 .videoWrapper {
   position: relative;
@@ -1421,3 +1421,9 @@ header {
 
 .footerSocial {
   float: right; }
+
+.standard {
+  font-size: 1.6rem;
+  color: #0185d3; }
+  .standard:visited {
+    color: #0185d3; }
