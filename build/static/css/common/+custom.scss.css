@@ -93,7 +93,7 @@ a {
     float: right;
     font-weight: bold;
     display: none; }
-  @media (max-width: 750px) {
+  @media (max-width: 900px) {
     #pulNav .menu {
       display: block;
       margin-top: 3px; }

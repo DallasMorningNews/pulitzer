@@ -145,4 +145,8 @@ $(window).resize(function(){
 	});
 
 
+	$("#cartoons").easyslide();
+
+
+
 });
